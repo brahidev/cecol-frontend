@@ -1,0 +1,19 @@
+.header{
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    width: 96%;
+    justify-content: space-between;
+    margin-inline: 2%;
+}
+
+.content{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+.content .wrapper_items, .content .wrapper_login{
+    display: flex;
+    gap: 1rem;
+}

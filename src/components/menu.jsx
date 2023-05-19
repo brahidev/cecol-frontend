@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from '../assets/images/logo.png';
 import styles from '../styles/menu.module.css'
 
 const MenuDesktop = ()=>{
     return(
         <section className={styles.header}>
-            <img className={styles.logo} src={logo} alt="Logo"/>
+            <img className={styles.logo} src={'/images/logo.png'} alt="Logo"/>
             <menu className={styles.content}>
                 <div className={styles.wrapper_items}>
                     <li className={styles.item}>

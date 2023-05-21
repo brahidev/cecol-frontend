@@ -69,7 +69,7 @@ export const itemsFooter = [
             },
             {
                 name: "313 123456677",
-                url: "/tel:+34678567876"
+                url: "tel:313123456677"
             },
             {
                 name: "Calle 84 #30-30",

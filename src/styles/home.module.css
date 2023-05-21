@@ -47,11 +47,130 @@
 }
 
 .formcertified{
+    display: flex;
     width: 96%;
     margin-inline: auto;
+    background-image: url('../../public/images/fondo-form-home.png');
+    background-repeat: no-repeat;
+    aspect-ratio: 3/1;
+    background-size: contain;
+    margin-block: 2rem;
+}
+
+.formcertified::after{
+    content: 'hola';
+    background-image: url('../../public/images/rectangle1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 96%;
+    position: absolute;
+    height: 65%;
+    font-size: 0;
+}
+
+.formcertified_desc, .formcertified_form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    z-index: 1;
 }
 
 .formcertified_desc{
-    width: 50%;
-    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    margin: 0 1rem 3rem 1rem;
+}
+
+.formcertified_desc_img{
+    width: 60px;
+    height: 64px;
+}
+
+.formcertified_desc_title{
+    font-family: "Rubik-Bold";
+    font-size: 1.5rem;
+    max-width: 300px;
+    text-align: center;
+    margin-block: 1.5rem;
+}
+
+.formcertified_form{
+    background-color: var(--white);
+    margin: 3rem 3rem 3rem 0;
+    border-radius: 30px;
+}
+
+.formcertified_form_title{
+    font-family: "Rubik-Bold";
+    font-size: 1.5rem;
+    color: var(--blue);
+    padding: 0 0 0 3rem;
+    margin-top: 2rem;
+}
+
+.formcertified_form_subtitle{
+    font-family: "Rubik-Regular";
+    font-size: 1rem;
+    padding: 0 0 0 3rem;
+    margin-block: 1rem;
+}
+
+.formcertified_form_subsubtitle{
+    font-family: "Rubik-Bold";
+    font-size: 1.3rem;
+    color: var(--blue);
+    padding: 0 0 0 3rem;
+    margin-top: 1.5rem;
+}
+
+.formcertified_form_list, .formcertified_form_text{
+    font-family: "Rubik-Regular";
+    font-size: 1rem;
+    margin: 0 0 0 3rem;
+    border-radius: 5px;
+    border: 1px solid #D9D9D9;
+    
+    margin-block: 1rem;
+}
+
+.formcertified_form_list{
+    height: 3rem;
+    width: 6rem;
+}
+
+.formcertified_form_text{
+    width: 60%;
+    height: 3rem;
+    padding-left: 10px;
+}
+
+.formcertified_form_button{
+    background-color: var(--blue-light);
+    width: 16rem;
+    border: none;
+    margin: auto;
+    height: 3rem;
+    border-radius: 5px;
+    font-family: "Rubik-Bold";
+    font-size: 17px;
+    color: var(--white);
+}
+
+.formcertified_form_button:hover{
+    box-shadow: 3px 3px 5px #000;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

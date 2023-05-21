@@ -11,6 +11,7 @@ code {
 }
 
 :root {
+  --blue-extra-light: #F0F4F9;
   --blue-light: #099ACB;
   --blue: #0D3880;
   --black: #000000;

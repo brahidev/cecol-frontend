@@ -43,25 +43,23 @@ const Home = ()=>{
             </section>
             <section className={styles.formcertified}>
                     <div className={styles.formcertified_desc}>
-                        <img src='' alt='' className={styles.formcertified_desc_img}/>
+                        <img src={'/images/sheets.png'} alt='' className={styles.formcertified_desc_img}/>
                         <span className={styles.formcertified_desc_title}>Valida la información de la certificación</span>
                         <span className={styles.formcertified_desc_desc}>solicite fácilmente tus certificados vigentes.</span>
                     </div>
                     <div className={styles.formcertified_form}>
-                        <span className={styles.formcertified_form_title}></span>
-                        <span className={styles.formcertified_form_}></span>
-                        <span className={styles.formcertified_form_title}></span>
-                        <div className={styles}>
-                            <datalist className={styles}>
-                                <option className={styles} value="Internet Explorer"/>
-                                <option className={styles} value="Firefox"/>
-                                <option className={styles} value="Google Chrome"/>
-                                <option className={styles} value="Opera"/>
-                                <option className={styles} value="Safari"/>
-                            </datalist>
-                            <input type="number" name="" id="" />
+                        <span className={styles.formcertified_form_title}>Complete el siguiente formulario</span>
+                        <span className={styles.formcertified_form_subtitle}>Para validar su certificado</span>
+                        <span className={styles.formcertified_form_subsubtitle}>Ingrese su documento*</span>
+                        <div className={styles.formcertified_form_wrapper_input}>
+                            <select className={styles.formcertified_form_list}>
+                                <option selected>Tipo</option>
+                                <option className={styles.formcertified_form_option} value="CC">CC</option>
+                                <option className={styles.formcertified_form_option} value="NIT">NIT</option>
+                            </select>
+                            <input className={styles.formcertified_form_text} type="number" name="" id="" />
                         </div>
-                        <input type="button" value="" />
+                        <button className={styles.formcertified_form_button}>Validar</button>
                     </div>
             </section>
         </>

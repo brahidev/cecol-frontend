@@ -4,7 +4,7 @@ import styles from '../styles/menu.module.css'
 
 const MenuDesktop = ()=>{
     return(
-        <section className={styles.header}>
+        <section className={styles.contentheader}>
             <img className={styles.logo} src={'/images/logo.png'} alt="Logo"/>
             <menu className={styles.content}>
                 <div className={styles.wrapper_items}>

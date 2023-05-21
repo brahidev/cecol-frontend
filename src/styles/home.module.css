@@ -38,10 +38,20 @@
 
 .description_slide{
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 1rem;
     font-family: "Rubik-Regular";
     color: var(--white);
     font-size: 1.3rem;
     z-index: 1;
+}
+
+.formcertified{
+    width: 96%;
+    margin-inline: auto;
+}
+
+.formcertified_desc{
+    width: 50%;
+    background-color: aqua;
 }

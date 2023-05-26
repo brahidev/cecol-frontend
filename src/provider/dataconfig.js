@@ -146,11 +146,21 @@ export const itemsPresentation = {
     mision: {
         image: '/images/concepto-negocio-equipo-cerca 1.png',
         title_img: 'cecol',
-        title: 'Vision',
+        title: 'Vision'
     },
     vision: {
         image: '/images/hombre-negocios-bombilla-encendida-su-mano 1.png',
         title_img: 'cecol',
-        title: 'Mision',
+        title: 'Mision'
+    },
+    derechos: {
+        image: '/images/amigos-felices-biblioteca 1.png',
+        title_img: 'Derechos',
+        title: 'Derechos'
+    },
+    deberes: {
+        image: '/images/fila-estudiantes-haciendo-examen 1.png',
+        title_img: 'Deberes',
+        title: 'Deberes'
     }
 }

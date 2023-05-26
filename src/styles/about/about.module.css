@@ -10,6 +10,8 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: flex-start;
+  width: 96%;
+  margin-inline: auto;
 }
 
 .presentation > div > p {
@@ -34,6 +36,8 @@
   justify-content: center;
   align-items: center;
   gap: 7rem;
+  width: 96%;
+  margin-inline: auto;
 }
 
 .mision > div > p {
@@ -55,6 +59,8 @@
   justify-content: center;
   align-items: center;
   gap: 7rem;
+  width: 96%;
+  margin-inline: auto;
 }
 
 .mision > div > p {
@@ -62,4 +68,148 @@
   font-weight: 400;
   font-size: 17px;
   text-align: justify;
+}
+
+.generalObjective {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 96%;
+  margin-inline: auto;
+}
+
+.specificObjective {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 96%;
+  margin-inline: auto;
+}
+
+.specificContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.specificObjective .specificContainer > div > ul > li {
+  margin-bottom: 1rem;
+}
+
+.politicas {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #F0F4F9;
+}
+
+.ourPoliticas {
+  margin-top: 1rem;
+  width: 96%;
+  margin-inline: auto;
+}
+
+.politicasContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.politicaCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 350px;
+  height: 181px;
+  border-radius: 11px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+  font-family: "Rubik-Regular";
+  font-weight: 700;
+  color: #0D3880;
+  cursor: pointer;
+}
+
+.politicaCard > p {
+  text-align: center;
+}
+
+.activePoliticaCard {
+  background-color: #0D3880;
+  color: white;
+}
+
+.responsability {
+  margin-top: 4rem;
+  width: 96%;
+  margin-inline: auto;
+}
+
+.description {
+  margin-top: 2rem;
+  width: 96%;
+  margin-inline: auto;
+}
+
+.description > ul > li {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.derechos {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #F0F4F9;
+}
+
+.derechosContainer {
+  margin-top: 1rem;
+  width: 96%;
+  margin-inline: auto;
+}
+
+.derechosCardsContainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.derechosCards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 596px;
+  height: 326px;
+  border-radius: 11px;
+  background-color: white;
+  gap: 1rem;
 }

@@ -37,6 +37,69 @@ export const configSlideHome = [
     }
 ]
 
+export const fichasHome = [
+    {
+        title: 'Vigilante competente en servicios de seguridad privada',
+        urlIcon: '/images/icon-security-1.png',
+        titleRedirect: 'Leer más',
+        urlRedirect: '/esquemas-certificacion'
+    },
+    {
+        title: 'Supervisor competente en servicios de vigilancia y seguridad privada',
+        urlIcon: '/images/Vector (1).png',
+        titleRedirect: 'Leer más',
+        urlRedirect: '/esquemas-certificacion'
+    },
+    {
+        title: 'Escolta competente en protección de personas y activos',
+        urlIcon: '/images/icon-security.png',
+        titleRedirect: 'Leer más',
+        urlRedirect: '/esquemas-certificacion'
+    },
+    {
+        title: 'Operador de medios tecnológicos competente en vigilancia y seguridad privada',
+        urlIcon: '/images/icon-camera.png',
+        titleRedirect: 'Leer más',
+        urlRedirect: '/esquemas-certificacion'
+    },
+    {
+        title: 'Persona competente en atención y servicio al cliente',
+        urlIcon: '/images/icon-contact.png',
+        titleRedirect: 'Leer más',
+        urlRedirect: '/esquemas-certificacion'
+    }
+]
+
+export const configSlideHomeBotton = [
+    {
+        img: '/images/ernesto.png',
+        title_img: 'cecol',
+        description: 'Son un equipo de profesionales con la mejor economía para garantizar que un buen proceso de certificación. ',
+        name: 'Ernesto Escobar',    
+        profession: 'Empleado',
+    },
+    {
+        img: '/images/ernesto.png',
+        title_img: 'cecol',
+        description: 'Son un equipo de profesionales con la mejor economía para garantizar que un buen proceso de certificación. ',
+        name: 'Ernesto Escobar',    
+        profession: 'Empleado',
+    },
+    {
+        img: '/images/ernesto.png',
+        title_img: 'cecol',
+        description: 'Son un equipo de profesionales con la mejor economía para garantizar que un buen proceso de certificación. ',
+        name: 'Ernesto Escobar',    
+        profession: 'Empleado',
+    },
+    {
+        img: '/images/ernesto.png',
+        title_img: 'cecol',
+        description: 'Son un equipo de profesionales con la mejor economía para garantizar que un buen proceso de certificación. ',
+        name: 'Ernesto Escobar',    
+        profession: 'Empleado',
+    }
+]
 
 export const itemsFooter = [
     {    

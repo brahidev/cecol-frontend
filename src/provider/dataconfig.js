@@ -141,3 +141,16 @@ export const itemsFooter = [
         ]
     }
 ]
+
+export const itemsPresentation = {
+    mision: {
+        image: '/images/concepto-negocio-equipo-cerca 1.png',
+        title_img: 'cecol',
+        title: 'Vision',
+    },
+    vision: {
+        image: '/images/hombre-negocios-bombilla-encendida-su-mano 1.png',
+        title_img: 'cecol',
+        title: 'Mision',
+    }
+}

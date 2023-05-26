@@ -1,0 +1,65 @@
+.container {
+  width: 96%;
+  margin-inline: auto;
+}
+
+.presentation {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.presentation > div > p {
+  font-family: "Rubik-Regular";
+  font-weight: 400;
+  font-size: 17px;
+  text-align: justify;
+}
+
+.subTitle {
+  color: #0D3880;
+  font-weight: 700;
+  font-size: 30px;
+  font-family: "Rubik-Regular";
+}
+
+.mision {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+}
+
+.mision > div > p {
+  font-family: "Rubik-Regular";
+  font-weight: 400;
+  font-size: 17px;
+  text-align: justify;
+}
+
+.image {
+  border-radius: 15px;
+}
+
+.vision {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+}
+
+.mision > div > p {
+  font-family: "Rubik-Regular";
+  font-weight: 400;
+  font-size: 17px;
+  text-align: justify;
+}

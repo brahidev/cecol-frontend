@@ -1,0 +1,68 @@
+.img_main_slide{
+    width: 100%;
+}
+
+.main_slide{
+    width: 96%;
+    margin-inline: auto;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
+}
+
+.wrapper_contain_slide{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.wrapper_contain_slide:after{
+    background-image: url('../../public/images/rectangle.png');
+    background-size: contain;
+    width: 100%;
+    content: "";
+    height: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.title_slide{
+    position: absolute;
+    top: 55%;
+    left: 1rem;
+    font-family: "Rubik-Bold";
+    color: var(--white);
+    font-size: 2.3rem;
+    z-index: 1;
+}
+
+.description_slide{
+    position: absolute;
+    top: 75%;
+    left: 1rem;
+    font-family: "Rubik-Regular";
+    color: var(--white);
+    font-size: 1.3rem;
+    z-index: 1;
+}
+
+.main_description{
+    width: 96%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block: 1rem
+}
+
+.main_description .title{
+    font-family: "Rubik-Bold";
+    color: var(--blue);
+    font-size: 2.5rem;
+}
+
+.main_description .description{
+   font-family: "Rubik-Regular";
+   font-size: 1rem;
+}
+

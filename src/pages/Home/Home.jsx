@@ -12,7 +12,7 @@ const Home = ()=>{
     useEffect(() => {
         // listen for Swiper events using addEventListener
         swiperElRef.current.addEventListener('progress', (e) => {
-        const [swiper, progress] = e.detail;
+        const [progress] = e.detail;
         console.log(progress);
         });
 

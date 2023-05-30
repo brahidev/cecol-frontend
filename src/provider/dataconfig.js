@@ -141,3 +141,18 @@ export const itemsFooter = [
         ]
     }
 ]
+
+export const configSlideCertified = [
+    {
+        img: '/images/grupo_personas_trabajando.png',
+        title_img: 'cecol',
+        title: 'En CECOL OCP trabajamos fomentar el crecimiento profesional',
+        description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'
+    },
+    {
+        img: '/images/grupo_personas_trabajando.png',
+        title_img: 'cecol',
+        title: 'En CECOL OCP trabajamos fomentar el crecimiento profesional',
+        description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
+    }
+]

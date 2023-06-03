@@ -213,3 +213,22 @@
   background-color: white;
   gap: 1rem;
 }
+
+.linkficha{
+  font-family: "Rubik-Bold";
+  color: var(--blue-light);
+  font-size: 1rem;
+  width: 100%;
+  text-align: right;
+  padding-right: 5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.linkficha::after{
+  content: url('../../../public/images/arrow-right.png');
+  margin-left: 0.5rem;
+  top: 3px;
+  position: relative;
+}

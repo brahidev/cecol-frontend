@@ -1,10 +1,15 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { configSlideHome } from '../../provider/dataconfig'; 
 import styles from '../../styles/home.module.css'
 import aboutStyles from '../../styles/about/about.module.css'
-import { itemsPresentation } from '../../provider/dataconfig'
+import { itemsPresentation, politiquesContent } from '../../provider/dataconfig'
+import Modal from '../../components/modal'
 
 const About = () => {
+    // State Modal
+    const [ open, setOpen ] = useState(false)
+    const [ contentModal, setContentModal ] = useState({})
+
     // Slide
     const swiperElRef = useRef(null);
     useEffect(() => {
@@ -18,6 +23,17 @@ const About = () => {
         console.log('slide changed');
         });
     }, []);
+
+    const handleClick = (title, content) => {
+        // State Open
+        setOpen(!open)
+
+        // State content
+        setContentModal({
+            title,
+            content
+        })
+    }
 
     return(
         <>
@@ -104,37 +120,49 @@ const About = () => {
                     <div className={aboutStyles.ourPoliticas}>
                         <label className={aboutStyles.subTitle}>Politicas</label>
                         <div className={aboutStyles.politicasContainer}>
-                            <div className={`${aboutStyles.politicaCard} ${aboutStyles.activePoliticaCard}`}>
-                                <p>Política de calidad</p>
-                            </div>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de imparcialidad</p>
-                            </div>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de confidencialidad (Tratamiento de la informacón)</p>
-                            </div>
+                            {
+                                politiquesContent.slice(0, 3).map(item => {
+                                    return (
+                                        <div
+                                            className={`${aboutStyles.politicaCard} ${item.active ? aboutStyles.activePoliticaCard : ''}`}
+                                            onClick={(e) => handleClick(item.title, item.content)}
+                                            key={item.title}
+                                        >
+                                            <p>{item.title}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                         <div className={aboutStyles.politicasContainer}>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de igualdad</p>
-                            </div>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de quejas y apelaciones</p>
-                            </div>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de suspensión y retiro de la certificación</p>
-                            </div>
+                            {
+                                politiquesContent.slice(3, 6).map(item => {
+                                    return (
+                                        <div
+                                            className={`${aboutStyles.politicaCard} ${item.active ? aboutStyles.activePoliticaCard : ''}`}
+                                            onClick={(e) => handleClick(item.title, item.content)}
+                                            key={item.title}
+                                        >
+                                            <p>{item.title}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                         <div className={aboutStyles.politicasContainer}>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de precios</p>
-                            </div>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de seguridad</p>
-                            </div>
-                            <div className={aboutStyles.politicaCard}>
-                                <p>Política de gestión de riesgos</p>
-                            </div>
+                            {
+                                politiquesContent.slice(6, 9).map(item => {
+                                    return (
+                                        <div
+                                            className={`${aboutStyles.politicaCard} ${item.active ? aboutStyles.activePoliticaCard : ''}`}
+                                            onClick={(e) => handleClick(item.title, item.content)}
+                                            key={item.title}
+                                        >
+                                            <p>{item.title}</p>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </section>
@@ -161,17 +189,23 @@ const About = () => {
                             <div className={aboutStyles.derechosCards}>
                                 <img className={aboutStyles.image} src={itemsPresentation.derechos.image} title={itemsPresentation.derechos.title_img} alt={itemsPresentation.derechos.title} />
                                 <label className={aboutStyles.subTitle}>Derechos de los solicitantes</label>
-                                <a href='!#'>Leer mas</a>
+                                <a href='!#' onClick={(e) => handleClick('Derechos de los solicitantes')} className={aboutStyles.linkficha}>Leer mas</a>
                             </div>
                             <div className={aboutStyles.derechosCards}>
                                 <img className={aboutStyles.image} src={itemsPresentation.deberes.image} title={itemsPresentation.deberes.title_img} alt={itemsPresentation.derechos.title} />
                                 <label className={aboutStyles.subTitle}>Deberes de las personas certificadas</label>
-                                <a href='!#'>Leer mas</a>
+                                <a href='!#' className={aboutStyles.linkficha}>Leer mas</a>
                             </div>
                         </div>
                     </div>
                 </section>
             </section>
+            <Modal
+                open={open}
+                setOpen={setOpen}
+                title={contentModal.title}
+                content={contentModal.content}
+            />
         </>
     )
 }

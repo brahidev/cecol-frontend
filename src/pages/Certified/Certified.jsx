@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import styles from '../../styles/cretified.module.css'
-import { configSlideCertified } from '../../provider/dataconfig'; 
+import { configSlideCertified, esquemasCertificacion } from '../../provider/dataconfig'; 
 
 const Certified = ()=>{
     const swiperElRef = useRef(null);
@@ -42,9 +42,27 @@ const Certified = ()=>{
                 <span className={styles.description}>Si deseas recibir mas información, comunícate con nosotros a nuestra linea telefónica (000) 0000000, celular 0000000000, o escríbenos a los correos info@correo.com, coordinador@correo.com.</span>
             </section>
             <section className={styles.certificaciones}>
-                <div >
-
-                </div>
+                {esquemasCertificacion.map((itemCertified, index)=>(
+                    <div key={itemCertified.title} className={styles.itemCertified}>
+                    {index % 2 === 0 ? 
+                        <>
+                        <img src={itemCertified.img} alt={itemCertified.title}/>
+                        <div className={styles.contentDscription}>
+                            <span className={styles.title}>{itemCertified.title}</span>
+                            <span className={styles.description}>{itemCertified.description}</span>
+                        </div>
+                        </>
+                        :
+                        <>
+                        <div className={styles.contentDscription}>
+                            <span className={styles.title}>{itemCertified.title}</span>
+                            <span className={styles.description}>{itemCertified.description}</span>
+                        </div>
+                        <img src={itemCertified.img} alt={itemCertified.title}/>
+                        </>
+                    }
+                    </div>
+                ))}
             </section>
         </>
     )

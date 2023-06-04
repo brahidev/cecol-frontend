@@ -22,7 +22,7 @@ const MenuDesktop = ()=>{
                     </li>
                 </div>
                 <div className={styles.wrapper_login}>
-                    <a href="https://www.google.com">REGISTRO</a>
+                    <Link to="/registro">REGISTRO</Link>
                     <a href="https://www.google.com">INGRESAR</a>
                 </div>
             </menu>

@@ -4,6 +4,7 @@ import Home from "./Home/Home";
 import About from "./About/About";
 import Questions from "./Questions/Questions";
 import Certified from "./Certified/Certified.jsx";
+import Register from "./Register";
 
 const Content = ()=>{
     return(
@@ -12,6 +13,7 @@ const Content = ()=>{
             <Route path="/quienes-somos" element={<About />} />
             <Route path="/esquemas-certificacion" element={<Certified />} />
             <Route path="/preguntas-frecuentes" element={<Questions />} />
+            <Route path="/registro" element={<Register />} />
         </Routes>
     )
 }

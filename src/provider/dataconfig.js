@@ -157,6 +157,34 @@ export const configSlideCertified = [
     }
 ]
 
+export const esquemasCertificacion = [
+    {
+        img: '/images/Cetified_1.png',
+        title: 'Persona competente en atención y servicio al cliente',
+        description: 'Este esquema abarca una amplia gama de actividades relacionada con la atención y servicio al cliente, principalmente los criterios de conocimiento y desempeño especificados en la norma de referencia bajo los cuales determinamos que la persona es capaz de desenvolverse en diversos cargos en los que se requiera una interacción directa con el consumidor.'
+    },
+    {
+        img: '/images/Cetified_2.png',
+        title: 'Vigilante competente en servicios de seguridad privada',
+        description: 'Evaluamos la pericia demostrada por la persona para desempeñarse de manera eficaz en su rol como Vigilante al aplicar los criterios de la Normativa, en especial lo que tiene que ver con: Control de accesos, Prevenir incidentes y Atender situaciones de crisis, así como los conocimientos aplicados para el desarrollo efectivo de la labor.'
+    },
+    {
+        img: '/images/Cetified_3.png',
+        title: 'Supervisor competente en servicios de vigilancia y seguridad privada',
+        description: 'Mediante la aplicación de este esquema la persona deberá demostrar que cuenta con las habilidades necesarias para supervisar los servicios de seguridad y vigilancia mediante la demostración de evidencias de conocimiento y desempeño según la norma de referencia.'
+    },
+    {
+        img: '/images/Cetified_4.png',
+        title: 'Escolta competente en protección de personas y activos',
+        description: 'Esquema de certificación diseñado para constatar que la persona tiene la capacidad para desempeñar su rol en la protección de personas y activos, principalmente idónea para minimizar cualquier situación de riesgo identificada al momento de ejercer su labor.'
+    },
+    {
+        img: '/images/Cetified_5.png',
+        title: 'Operador de medios tecnológicos competente en vigilancia y seguridad privada',
+        description: 'La persona que desee certificar su competencia deberá ser capaz de manejar herramientas tecnológicas, cámaras de seguridad, analizar la información que hay detrás de ellas y predecir los futuros eventos de riesgo que puedan presentarse.'
+    }
+]
+
 export const itemsPresentation = {
     mision: {
         image: '/images/concepto-negocio-equipo-cerca 1.png',

@@ -1,10 +1,10 @@
 import React from "react";
 import MenuDesktop from "./menu";
-//import styles from '../styles/header.modules.css'
+import styles from '../styles/header.modules.css'
 
 const Header = ()=>{
     return(
-        <header>
+        <header className={styles.headerContaint}>
             <MenuDesktop/>
         </header>
     )

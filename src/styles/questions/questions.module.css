@@ -1,0 +1,156 @@
+.banner {
+  background-image: url('../../../public/images/Preguntas_Frecuentes.png');
+  background-size: cover;
+  height: 680px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.info div {
+  margin-bottom: 20px;
+}
+
+.info label {
+  font-weight: 700;
+  color: white;
+  size: 22px;
+  font-family: "Rubik-Bold";
+  line-height: 26px;
+}
+
+.info p {
+  font-weight: 400;
+  color: white;
+  size: 17px;
+  font-family: "Rubik-Regular";
+}
+
+.ubicacion::before {
+  content: url('../../../public/images/Icon_ubicacion.png');
+  position: absolute;
+  left: 22rem;
+  top: 18rem;
+}
+
+.telefono::before {
+  content: url('../../../public/images/Icon_telefono.png');
+  position: absolute;
+  left: 22rem;
+  top: 25rem;
+  
+}
+
+.email::before {
+  content: url('../../../public/images/Icon_email.png');
+  position: absolute;
+  left: 22rem;
+  top: 31rem;
+}
+
+.form {
+  width: 597px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 2rem 1.5rem 1.8rem 1.5rem
+}
+
+.form label {
+  font-family: "Rubik-Bold";
+  color: rgba(13, 56, 128, 1);
+  font-size: 30px;
+  list-style: 35px;
+}
+
+.inputForm {
+  width: 52%;
+  font-family: "Rubik-Regular";
+  height: 48px;
+  font-size: 1rem;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  text-indent: 1rem;
+}
+
+textarea {
+  width: 100%;
+  font-family: "Rubik-Regular";
+  height: 120px;
+  font-size: 1rem;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  text-indent: 1rem;
+  padding-top: 1rem;
+}
+
+.formContainer {
+  margin-top: 2rem;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btnsubmit {
+  width: 40%;
+  padding: 1rem;
+  border: 2px solid var(--blue-light);
+  background-color: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--white);
+  font-family: "Rubik-Medium";
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.questions {
+  margin: 4rem 2rem 4rem 2rem;
+}
+
+.questions label {
+  text-align: left;
+  color: rgba(13, 56, 128, 1);
+  font-family: "Rubik-Medium";
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.accordionContainer {
+  margin: 2rem 4.5rem 2rem 4.5rem;
+}
+
+.AccordionSummary p {
+  font-size: 22px;
+  font-family: "Rubik-Regular";
+  font-weight: 700;
+}
+
+.AccordionDetails p {
+  font-size: 17px;
+  font-family: "Rubik-Regular";
+  font-weight: 400;
+}

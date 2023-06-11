@@ -15,10 +15,10 @@ const Modal = ({ open, setOpen, title, content }) => {
       className={styles.modal}
       overlayClassName={styles.overlay}
     >
+      <button onClick={() => handleClose()} />
       <label>{title}</label>
       <p>{content}</p>
       <hr />
-      <button onClick={() => handleClose()} />
     </ReactModal>
   )
 }

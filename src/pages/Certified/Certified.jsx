@@ -43,7 +43,7 @@ const Certified = ()=>{
             </section>
             <section className={styles.certificaciones}>
                 {esquemasCertificacion.map((itemCertified, index)=>(
-                    <div key={itemCertified.title} className={styles.itemCertified}>
+                    <div key={itemCertified.title} className={styles.itemCertified} id={itemCertified.id}>
                     {index % 2 === 0 ? 
                         <>
                         <img src={itemCertified.img} alt={itemCertified.title}/>

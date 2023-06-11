@@ -19,9 +19,9 @@ const Footer = () =>{
                     <span className={styles.title}>Siguenos</span>
                     <div className={styles.social}>
                         <img src={'/images/facebook.png'} alt="facebook"/>
-                        <img src={'/images/twitter.png'} alt="facebook"/>
-                        <img src={'/images/facebook.png'} alt="facebook"/>
-                        <img src={'/images/linkedIn.png'} alt="facebook"/>
+                        <img src={'/images/twitter.png'} alt="twitter"/>
+                        <img src={'/images/instagram.png'} alt="instagram"/>
+                        <img src={'/images/linkedIn.png'} alt="linkedIn"/>
                     </div>
                     <div className={styles.login}>
                         <a href="https://www.google.com">REGISTRO</a>

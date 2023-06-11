@@ -17,15 +17,14 @@
 .presentation > div > p {
   font-family: "Rubik-Regular";
   font-weight: 400;
-  font-size: 17px;
+  font-size: 1rem;
   text-align: justify;
 }
 
 .subTitle {
-  color: #0D3880;
-  font-weight: 700;
-  font-size: 30px;
-  font-family: "Rubik-Regular";
+  font-family: "Rubik-Bold";
+  color: var(--blue);
+  font-size: 2rem;
 }
 
 .mision {
@@ -40,10 +39,18 @@
   margin-inline: auto;
 }
 
+.mision img, .vision img {
+  width: 50%;
+}
+
+.mision > div, .vision > div{
+  width:50%;
+}
+
 .mision > div > p {
   font-family: "Rubik-Regular";
-  font-weight: 400;
-  font-size: 17px;
+  color: var(--black);
+  font-size: 1rem;
   text-align: justify;
 }
 
@@ -63,10 +70,10 @@
   margin-inline: auto;
 }
 
-.mision > div > p {
+.vision > div > p {
   font-family: "Rubik-Regular";
-  font-weight: 400;
-  font-size: 17px;
+  color: var(--black);
+  font-size: 1rem;
   text-align: justify;
 }
 
@@ -102,6 +109,7 @@
 
 .specificObjective .specificContainer > div > ul > li {
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .politicas {
@@ -123,7 +131,7 @@
 .politicasContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 5rem;
@@ -138,7 +146,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  width: 350px;
+  width: 26%;
   height: 181px;
   border-radius: 11px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
@@ -150,6 +158,7 @@
 
 .politicaCard > p {
   text-align: center;
+  margin-inline: 1rem;
 }
 
 .activePoliticaCard {
@@ -224,6 +233,8 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  border: none;
+  background-color: transparent;
 }
 
 .linkficha::after{

@@ -58,7 +58,7 @@
 .main_description .title{
     font-family: "Rubik-Bold";
     color: var(--blue);
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .main_description .description{
@@ -93,7 +93,7 @@
 .title{
     font-family: "Rubik-Bold";
     color: var(--blue);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .description{

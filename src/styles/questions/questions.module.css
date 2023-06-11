@@ -40,14 +40,14 @@
 .ubicacion::before {
   content: url('../../../public/images/Icon_ubicacion.png');
   position: absolute;
-  left: 22rem;
+  left: 7%;
   top: 18rem;
 }
 
 .telefono::before {
   content: url('../../../public/images/Icon_telefono.png');
   position: absolute;
-  left: 22rem;
+  left: 7%;
   top: 25rem;
   
 }
@@ -55,7 +55,7 @@
 .email::before {
   content: url('../../../public/images/Icon_email.png');
   position: absolute;
-  left: 22rem;
+  left: 7%;
   top: 31rem;
 }
 

@@ -100,19 +100,27 @@
     background-image: url('../../public/images/fondo-form-home.png');
     background-repeat: no-repeat;
     aspect-ratio: 3/1;
-    background-size: contain;
+    background-size: cover;
     margin-block: 2rem;
+    max-height: 430px;
+    min-width: 1259px;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 .formcertified::after{
     content: 'hola';
     background-image: url('../../public/images/rectangle1.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 96%;
     position: absolute;
-    height: 65%;
+    height: 100%;
     font-size: 0;
+    max-height: 430px;
+    min-width: 1259px;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 .formcertified_desc, .formcertified_form{
@@ -222,6 +230,17 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.esquemas_description{
+    width: 100%;
+    background-color: var(--blue-extra-light);
+    display: flex;
+    width: 100%;
+    margin-inline: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .contentfichas{
     background-color: var(--blue-extra-light);
     display: flex;
@@ -233,7 +252,7 @@ input[type=number] {
 }
 
 .wrappertitlefichas{
-    width: calc(63rem + 13%);
+    width: 96%;
     display: flex; 
     align-items: center;
     margin-top: 1rem;
@@ -270,8 +289,8 @@ input[type=number] {
 }
 
 .descfichas{
-    width: 76%;
-    margin-left: 7%;
+    width: 100%;
+    margin-left: 2%;
     text-align: justify;
     font-family: "Rubik-Regular";
     font-size: 1rem;

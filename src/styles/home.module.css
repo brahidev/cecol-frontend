@@ -370,3 +370,42 @@ input[type=number] {
 .profession_slide_bottom{
     font-size: 1.1rem;
 }
+
+@media (max-width: 1024px) {
+    .certificacion{
+        flex-direction: column;
+        margin: 2rem auto 2rem auto;
+    }
+
+    .certificacion img{
+        width: 100%;
+    }
+
+    .wrapper_description_certificacion{
+        margin-top: 0;
+        padding-left: 0;
+    }
+
+    .formcertified{
+        flex-direction: column;
+        background-image: none;
+        max-height: none;
+        min-width: auto;
+        width: 96%;
+        height: auto;
+        position: relative;
+        aspect-ratio: auto;
+        background: var(--blue);
+    }
+    .formcertified>div{
+        width: 100%;
+    }
+
+    .wrappertitlefichas{
+        flex-direction: column;
+    }
+
+    .contenttitlefichas{
+        width: auto;
+    }
+}

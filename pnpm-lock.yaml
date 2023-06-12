@@ -40,9 +40,15 @@ dependencies:
   react-router-dom:
     specifier: ^6.11.2
     version: 6.11.2(react-dom@18.2.0)(react@18.2.0)
+  react-router-hash-link:
+    specifier: ^2.4.3
+    version: 2.4.3(react-router-dom@6.11.2)(react@18.2.0)
   react-scripts:
     specifier: 5.0.1
     version: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.21.5)(eslint@8.41.0)(react@18.2.0)(typescript@5.0.4)
+  react-signature-canvas:
+    specifier: ^1.0.6
+    version: 1.0.6(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)
   swiper:
     specifier: ^9.3.2
     version: 9.3.2
@@ -8781,6 +8787,17 @@ packages:
       react-router: 6.11.2(react@18.2.0)
     dev: false
 
+  /react-router-hash-link@2.4.3(react-router-dom@6.11.2)(react@18.2.0):
+    resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
+    peerDependencies:
+      react: '>=15'
+      react-router-dom: '>=4'
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-router-dom: 6.11.2(react-dom@18.2.0)(react@18.2.0)
+    dev: false
+
   /react-router@6.11.2(react@18.2.0):
     resolution: {integrity: sha512-74z9xUSaSX07t3LM+pS6Un0T55ibUE/79CzfZpy5wsPDZaea1F8QkrsiyRnA2YQ7LwE/umaydzXZV80iDCPkMg==}
     engines: {node: '>=14'}
@@ -8886,6 +8903,20 @@ packages:
       - webpack-cli
       - webpack-hot-middleware
       - webpack-plugin-serve
+    dev: false
+
+  /react-signature-canvas@1.0.6(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-NoMHomYu9HxFeLjUGbIeV9abPdWSROfFxFNDekGdwmmaIx+w5ziOEiU2C34X0Ao4GxFnwqyUy/BpYlA4lCD1CA==}
+    peerDependencies:
+      prop-types: ^15.5.8
+      react: 0.14 - 18
+      react-dom: 0.14 - 18
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      signature_pad: 2.3.2
+      trim-canvas: 0.1.2
     dev: false
 
   /react-transition-group@4.4.5(react-dom@18.2.0)(react@18.2.0):
@@ -9373,6 +9404,10 @@ packages:
 
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: false
+
+  /signature_pad@2.3.2:
+    resolution: {integrity: sha512-peYXLxOsIY6MES2TrRLDiNg2T++8gGbpP2yaC+6Ohtxr+a2dzoaqWosWDY9sWqTAAk6E/TyQO+LJw9zQwyu5kA==}
     dev: false
 
   /sisteransi@1.0.5:
@@ -9951,6 +9986,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       punycode: 2.3.0
+    dev: false
+
+  /trim-canvas@0.1.2:
+    resolution: {integrity: sha512-nd4Ga3iLFV94mdhW9JFMLpQbHUyCQuhFOD71PEAt1NjtMD5wbZctzhX8c3agHNybMR5zXD1XTGoIEWk995E6pQ==}
     dev: false
 
   /tryer@1.0.1:

@@ -4,7 +4,6 @@ import { configSlideHome, fichasHome, configSlideHomeBotton } from '../../provid
 import { HashLink } from 'react-router-hash-link';
 import styles from '../../styles/home.module.css'
 import { Link } from "react-router-dom";
-import SignatureCanvas from 'react-signature-canvas'
 
 register();
 
@@ -129,16 +128,7 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
                     </swiper-container>
                 }
             </section>
-            <section>
-                <SignatureCanvas penColor='green'
-                    canvasProps={{width: 500, height: 200, className: 'sigCanvas'}}
-                    onEnd={ function(res) {
-                       const { target } = res
-
-                       console.log('Target', target.toDataURL().replace(/^data:image\/png;base64,/, ""))
-                    }}
-                />
-            </section>
+           
         </>
     )
 }

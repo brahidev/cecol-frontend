@@ -5,26 +5,25 @@ import Header from "../components/header";
 import HeaderMB from "../components/headerMobile"
 import Footer from "../components/footer";
 import FooterMB from "../components/footerMobile";
-
-import {
-  BrowserView,
-  MobileView
-} from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 export default function AppCecol() {
   return (
     <div>
       <Router>
-          <BrowserView>
+        {isMobile?
+          <>
             <Header/>
               <Content/>
             <Footer/>
-          </BrowserView>
-          <MobileView>
+          </>
+          :
+          <>
             <HeaderMB/>
-            <Content/>
+              <Content/>
             <FooterMB/>
-          </MobileView>
+          </>
+        }
       </Router>
     </div>
   );

@@ -13,15 +13,15 @@ export default function AppCecol() {
       <Router>
         {isMobile?
           <>
-            <Header/>
-              <Content/>
-            <Footer/>
-          </>
-          :
-          <>
             <HeaderMB/>
               <Content/>
             <FooterMB/>
+          </>
+          :
+          <>
+            <Header/>
+              <Content/>
+            <Footer/>
           </>
         }
       </Router>

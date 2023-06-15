@@ -101,3 +101,41 @@
     color: var(--black);
     font-size: 1rem;
 }
+
+@media (max-width: 1024px) {
+
+    .itemCertified{
+        flex-direction: column;
+    }
+    .itemCertified > img{
+        width: 90%;
+        margin-inline: auto;
+    }
+    .contentDscription{
+        width: 90%;
+        margin-inline: auto;
+    }
+    .wrapper_contain_slide:after{
+        background-size: cover;
+        height: 105%;   
+    }
+    .title_slide{
+        position: absolute;
+        top: 55%;
+        left: 1rem;
+        font-family: "Rubik-Bold";
+        color: var(--white);
+        font-size: 1.5rem;
+        z-index: 1;
+    }
+    
+    .description_slide{
+        position: absolute;
+        top: 75%;
+        left: 1rem;
+        font-family: "Rubik-Regular";
+        color: var(--white);
+        font-size: 1rem;
+        z-index: 1;
+    }
+}

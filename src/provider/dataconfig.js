@@ -1,36 +1,42 @@
 export const configSlideHome = [
     {
         img: '/images/personas_banner.png',
+        imgMobile: '/images/personas_banner_mb.png',
         title_img: 'cecol',
         title: 'Certificado de competencias Laborales',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'
     },
     {
         img: '/images/mujer-servicio-tel.png',
+        imgMobile: '/images/mujer-servicio-tel_mb.png',
         title_img: 'cecol',
         title: 'Persona competente en atención y servicio al cliente',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
     },
     {
         img: '/images/guardia-seguridad-lugar-trabajo.png',
+        imgMobile: '/images/guardia-seguridad-lugar-trabajo_mb.png',
         title_img: 'cecol',
         title: 'Vigilante competente en servicios de seguridad privada',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
     },
     {
         img: '/images/guardias-seguridad-lugar-trabajo.png',
+        imgMobile: '/images/guardias-seguridad-lugar-trabajo_mb.png',
         title_img: 'cecol',
         title: 'Supervisor competente en servicios de vigilancia y seguridad privada',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
     },
     {
         img: '/images/guardia-seguridad-que-protege-al-cliente.png',
+        imgMobile: '/images/guardia-seguridad-que-protege-al-cliente_mb.png',
         title_img: 'cecol',
         title: 'Escolta competente en protección de personas y activos',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
     },
     {
         img: '/images/retrato-guardia-pantallas.png',
+        imgMobile: '/images/retrato-guardia-pantallas_mb.png',
         title_img: 'cecol',
         title: 'Operador de medios tecnológicos competente en vigilancia y seguridad privada',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
@@ -145,12 +151,14 @@ export const itemsFooter = [
 export const configSlideCertified = [
     {
         img: '/images/grupo_personas_trabajando.png',
+        imgMobile: '/images/grupo_personas_trabajando_mb.png',
         title_img: 'cecol',
         title: 'En CECOL OCP trabajamos fomentar el crecimiento profesional',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'
     },
     {
         img: '/images/grupo_personas_trabajando.png',
+        imgMobile: '/images/grupo_personas_trabajando_mb.png',
         title_img: 'cecol',
         title: 'En CECOL OCP trabajamos fomentar el crecimiento profesional',
         description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
@@ -300,5 +308,22 @@ export const deberesContent = [
         • La persona certificada autoriza expresamente a CECOL OCP a suministrar la información de los resultados del proceso de evaluación y certificación cuando una autoridad competente y debidamente autorizada lo solicite.
 
         • La persona certificada debe aceptar que el certificado otorgado y demás documentos emanados a partir de la aplicación del esquema de certificación prestan merito ejecutivo y serán utilizados como tal para efectos jurídicos y legales.`
+    }
+]
+
+export const configSlideAbout = [
+    {
+        img: '/images/personas_banner.png',
+        imgMobile: '/images/about_mb.png',
+        title_img: 'cecol',
+        title: 'Certificado de competencias Laborales',
+        description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'
+    },
+    {
+        img: '/images/mujer-servicio-tel.png',
+        imgMobile: '/images/about_mb.png',
+        title_img: 'cecol',
+        title: 'Persona competente en atención y servicio al cliente',
+        description: 'El certificado de competencia laboral garantiza que una persona cuenta con los conocimiento, habilidades y destresas, requerido para desempreñar una labor cond determinada con altos entandares.'    
     }
 ]

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
-import styles from '../../styles/cretified.module.css'
+import styles from '../../styles/certified.module.css'
 import { configSlideCertified, esquemasCertificacion } from '../../provider/dataconfig'; 
+import { isMobile } from "react-device-detect";
 
 const Certified = ()=>{
     const swiperElRef = useRef(null);
@@ -28,7 +29,7 @@ const Certified = ()=>{
                         configSlideCertified.map((slide)=>(
                             <swiper-slide>
                                 <div className={styles.wrapper_contain_slide}>
-                                    <img className={styles.img_main_slide} src={slide.img} alt={slide.title_img} />
+                                    <img className={styles.img_main_slide} src={isMobile ? slide.imgMobile : slide.img} alt={slide.title_img} />
                                     <span className={styles.title_slide}>{slide.title}</span>
                                     <span className={styles.description_slide}>{slide.description}</span>
                                 </div>

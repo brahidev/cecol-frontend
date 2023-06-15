@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { configSlideHome } from '../../provider/dataconfig'; 
+import { configSlideAbout } from '../../provider/dataconfig'; 
 import styles from '../../styles/home.module.css'
 import aboutStyles from '../../styles/about/about.module.css'
 import { itemsPresentation, politiquesContent, deberesContent } from '../../provider/dataconfig'
 import Modal from '../../components/modal'
+import { isMobile } from "react-device-detect";
 
 const About = () => {
     // State Modal
@@ -47,10 +48,10 @@ const About = () => {
                     pagination="true"
                     >
                     {
-                        configSlideHome.map((slide)=>(
+                        configSlideAbout.map((slide)=>(
                             <swiper-slide>
                                 <div className={styles.wrapper_contain_slide}>
-                                    <img className={styles.img_main_slide} src={slide.img} alt={slide.title_img} />
+                                    <img className={styles.img_main_slide} src={isMobile ? slide.imgMobile : slide.img} alt={slide.title_img} />
                                     <span className={styles.title_slide}>{slide.title}</span>
                                     <span className={styles.description_slide}>{slide.description}</span>
                                 </div>

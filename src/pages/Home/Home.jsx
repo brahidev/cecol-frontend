@@ -4,6 +4,7 @@ import { configSlideHome, fichasHome, configSlideHomeBotton } from '../../provid
 import { HashLink } from 'react-router-hash-link';
 import styles from '../../styles/home.module.css'
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 register();
 
@@ -34,7 +35,7 @@ const Home = ()=>{
                         configSlideHome.map((slide)=>(
                             <swiper-slide>
                                 <div className={styles.wrapper_contain_slide}>
-                                    <img className={styles.img_main_slide} src={slide.img} alt={slide.title_img} />
+                                    <img className={styles.img_main_slide} src={isMobile ? slide.imgMobile : slide.img} alt={slide.title_img} />
                                     <span className={styles.title_slide}>{slide.title}</span>
                                     <span className={styles.description_slide}>{slide.description}</span>
                                 </div>
@@ -73,6 +74,24 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
             </section>
             <section className={styles.contentfichas}>
                 {
+                    isMobile?
+                    <swiper-container
+                        ref={swiperElRef}
+                        slides-per-view="1"
+                        navigation="true"
+                        pagination="true"
+                        >
+                        {fichasHome.map((ficha, index)=>(
+                            <swiper-slide>
+                                <div key={ficha.title} className={styles.ficha}>
+                                    <img src={ficha.urlIcon} alt={ficha.title} className={styles.imgficha}></img>
+                                    <span className={styles.titleficha}>{ficha.title}</span>
+                                    <HashLink to={ficha.urlRedirect} className={styles.linkficha}><span>{ficha.titleRedirect}</span></HashLink>
+                                </div>
+                            </swiper-slide>
+                        ))}
+                    </swiper-container>
+                    :
                     fichasHome.map((ficha, index)=>(
                         <div key={ficha.title} className={styles.ficha}>
                             <img src={ficha.urlIcon} alt={ficha.title} className={styles.imgficha}></img>

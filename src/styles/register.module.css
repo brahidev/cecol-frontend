@@ -125,3 +125,25 @@
     border: 1px solid var(--blue);
     border-radius: 5px;
 }
+
+@media (max-width: 1024px) {
+    .register{
+        flex-direction: column;
+        background-image: none;
+    }
+    .register::after{
+        background-image: none;
+    }
+    .infsection{
+        display: none;
+    }
+    .formsection{
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    canvas{
+        width: auto;
+        margin-inline: auto;
+    }
+}

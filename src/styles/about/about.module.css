@@ -243,3 +243,44 @@
   top: 3px;
   position: relative;
 }
+
+@media (max-width: 1024px) {
+  
+  /*ABOUT*/
+  .mision, .vision{
+      flex-direction: column;
+      gap: 1rem;
+  }
+  .mision > div, .mision > img, .vision > div, .vision > img{
+      width: 95%;
+      margin-inline: auto;
+  }
+  .specificContainer {
+    flex-direction: column;
+    width: 90%;
+  }
+  .ourPoliticas {
+    width: 90%;
+  }
+  .ourPoliticas > p{
+    text-align: justify;
+  }
+  .politicaCard {
+    width: 45%;
+    margin-block: 1rem;
+  }
+  .politicasContainer {
+    gap: 5%;
+  }
+  .derechosCardsContainer {
+    flex-direction: column;
+  }
+  .derechosCards {
+    width: 90%;
+    margin-inline: auto;
+  }
+  .subTitle {
+    text-align: center;
+  }
+  /*ABOUT*/
+}

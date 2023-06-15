@@ -154,3 +154,30 @@ textarea {
   font-family: "Rubik-Regular";
   font-weight: 400;
 }
+
+@media (max-width: 1024px) {
+  .banner {
+    flex-direction: column-reverse;
+    width: 96%;
+    height: auto;
+    background-color: var(--blue);
+    background-image: none;
+    height: auto;
+    gap: 2rem;
+    margin-inline: auto;
+  }
+  .form {
+    width: 100%;
+    height: auto;
+    padding: 0 0 1rem 0;
+  }
+  .accordionContainer {
+    width: 96%;
+    margin-inline: auto;
+  }
+  .ubicacion::before, .telefono::before, .email::before {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+}

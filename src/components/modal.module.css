@@ -81,3 +81,9 @@
   bottom: 0;
   background-color: #737373B2;
 }
+
+@media (max-width: 1024px) {
+  .modal {
+    width: 90%;
+  }
+}

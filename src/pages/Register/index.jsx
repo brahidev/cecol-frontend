@@ -50,7 +50,7 @@ const Register = () => {
             draggable: true,
             progress: undefined,
             theme: "dark",
-            });
+        });
 
         console.log('Response', await dataFetch.json())
     };

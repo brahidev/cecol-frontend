@@ -23,8 +23,8 @@ const Footer = () =>{
                         <img src={'/images/linkedIn.png'} alt="linkedIn"/>
                     </div>
                     <div className={styles.login}>
-                        <a href="https://www.google.com">REGISTRO</a>
-                        <a href="https://www.google.com">INGRESAR</a>
+                        <a href="/registro">REGISTRO</a>
+                        <a href="/">INGRESAR</a>
                     </div>
                 </div>
             </section>

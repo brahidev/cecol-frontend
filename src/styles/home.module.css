@@ -130,6 +130,45 @@
     z-index: 1;
 }
 
+.formcertified_form .loading{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: var(--blue-light) var(--blue-light) transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: auto;
+}
+
+.formcertified_form .loading::after, .formcertified_form .loading::before{
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent var(--blue) var(--blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+}
+
+.formcertified_form .loading::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+}      
+
 .formcertified_desc{
     align-items: center;
     justify-content: center;
@@ -216,6 +255,32 @@
     box-shadow: 3px 3px 5px #000;
     transition-duration: 0.3s;
     cursor: pointer;
+}
+
+.formcertified_form .certified{
+    font-family: "Rubik-Regular";
+    color: var(--blue);
+    font-size: 1.3rem;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.formcertified_form .label{
+    font-family: "Rubik-Regular";
+    color: var(--blue);
+    font-size: 1.3rem;
+    margin-top: 1%;
+    display: inline-flex;
+    margin-left: 1rem;
+}
+
+.formcertified_form .value{
+    font-family: "Rubik-Bold";
+    color: var(--blue);
+    font-size: 1.3rem;
+    margin-top: 1%;
+    display: inline-flex;
+    text-align: center;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -437,10 +502,23 @@ input[type=number] {
     .formcertified>div{
         width: 95%;
         margin-inline: auto;
+        min-height: 220px;
     }
 
     .formcertified_form_button{
         margin: 1rem auto;
+    }
+
+    .formcertified_form .certified{
+        font-size: 1rem;
+    }
+    
+    .formcertified_form .label{
+        font-size: 1rem;
+    }
+    
+    .formcertified_form .value{
+        font-size: 1rem;
     }
 
     .wrappertitlefichas{

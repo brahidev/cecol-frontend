@@ -1,21 +1,86 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { register } from 'swiper/element/bundle';
 import { configSlideHome, fichasHome, configSlideHomeBotton } from '../../provider/dataconfig'; 
 import { HashLink } from 'react-router-hash-link';
 import styles from '../../styles/home.module.css'
 import { Link } from "react-router-dom";
 import { isMobile } from "react-device-detect";
+import { ToastContainer, toast } from 'react-toastify';
 
 register();
 
 const Home = ()=>{
+    const [ dataUser, setDataUser ] = useState(null)
+    const [ isLoadForm, setIsLoadForm] = useState(false)
     const swiperElRef = useRef(null);
 
     const validateCertified = (event)=>{
         event.preventDefault()
-        let documentType = event.target[0]
-        let document = event.target[1]
-        console.log('DATA CONSULT', documentType, document);
+        let documentType = event.target[0].value
+        let document = event.target[1].value
+        if(documentType === "Tipo"){
+            toast.error('Selecciona tipo de documento !', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+        if(document.length < 5){
+            toast.error('Ingresa número de documento valido !', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+        setIsLoadForm(true)
+        var myHeaders = new Headers();
+        myHeaders.append("Cookie", "ch_sid=22jt3u41v44kdsv9lljs1vcigl");
+        
+        var formdata = new FormData();
+        formdata.append("tipo_doc", documentType);
+        formdata.append("numero_doc", document);
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: formdata,
+          redirect: 'follow'
+        };
+        
+        fetch("https://www.cecolocp.com/main/webservices/api/v2.php?username=admin&api_key=d4f21953eaa37fedb60e6ec4b9e582d3&action=get_candidate_validate", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+            let response = JSON.parse(result)
+            if(response.data.length === 0){
+                toast.info('Aún no cuentas con una certificación !', {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            }else if(response.data.length > 0){
+                setDataUser(response.data[0])
+                setIsLoadForm(false)
+            }
+        })
+        .catch(error => {
+            console.log('error', error)
+            setIsLoadForm(false)
+        });
     }
 
     useEffect(() => {
@@ -114,20 +179,37 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
                         <span className={styles.formcertified_desc_title}>Valida la información de la certificación</span>
                         <span className={styles.formcertified_desc_desc}>solicite fácilmente tus certificados vigentes.</span>
                     </div>
-                    <form className={styles.formcertified_form} onSubmit={validateCertified}>
-                        <span className={styles.formcertified_form_title}>Complete el siguiente formulario</span>
-                        <span className={styles.formcertified_form_subtitle}>Para validar su certificado</span>
-                        <span className={styles.formcertified_form_subsubtitle}>Ingrese su documento*</span>
-                        <div className={styles.formcertified_form_wrapper_input}>
-                            <select className={styles.formcertified_form_list}>
-                                <option selected>Tipo</option>
-                                <option className={styles.formcertified_form_option} value="CC">CC</option>
-                                <option className={styles.formcertified_form_option} value="NIT">NIT</option>
-                            </select>
-                            <input className={styles.formcertified_form_text} type="number" name="" id="" />
+                    
+                    {
+                        isLoadForm ? 
+                            <div className={styles.formcertified_form}>
+                                <div className={styles.loading}></div>
+                            </div>
+                        :
+                        dataUser == null?
+                        <form className={styles.formcertified_form} onSubmit={validateCertified}>
+                            <span className={styles.formcertified_form_title}>Complete el siguiente formulario</span>
+                            <span className={styles.formcertified_form_subtitle}>Para validar su certificado</span>
+                            <span className={styles.formcertified_form_subsubtitle}>Ingrese su documento*</span>
+                            <div className={styles.formcertified_form_wrapper_input}>
+                                <select className={styles.formcertified_form_list}>
+                                    <option className={styles.formcertified_form_option} value="1">CC</option>
+                                    <option className={styles.formcertified_form_option} value="2">NIT</option>
+                                </select>
+                                <input className={styles.formcertified_form_text} type="number" name="" id="" />
+                            </div>
+                            <button className={styles.formcertified_form_button} type="submit">Validar</button>
+                        </form>
+                        :
+                        <div className={styles.formcertified_form}>
+                            <span className={styles.certified}>{dataUser.nombre} {dataUser.apellido} identificado con número {dataUser.numero_doc} de la ciudad de {dataUser.lugar_expedicion} cuenta con una certificación:</span>
+                            <div><span className={styles.label}></span><span className={styles.value}>{dataUser.esquema}</span></div>
+                            <div><span className={styles.label}>Número de certificado: </span><span className={styles.value}>{dataUser.numero_certificado}</span></div>
+                            <div><span className={styles.label}>Otorgado: </span><span className={styles.value}>{dataUser.fecha_otorgamiento}</span></div>
+                            <div><span className={styles.label}>Fecha de vencimiento: </span><span className={styles.value}>{dataUser.fecha_vencimiento}</span></div>
+                            <div><span className={styles.label}>Fecha de renovación: </span><span className={styles.value}>{dataUser.fecha_renovacion}</span></div>
                         </div>
-                        <button className={styles.formcertified_form_button} type="submit">Validar</button>
-                    </form>
+                    }
             </section>
             <section>
                 {
@@ -154,7 +236,18 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
                     </swiper-container>
                 }
             </section>
-           
+            <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </>
     )
 }

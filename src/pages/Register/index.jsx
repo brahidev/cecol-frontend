@@ -10,19 +10,28 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [signature, setSignature] = useState()
-    const [error, setError] = useState(false)
     const onSubmit = async data => {
-
-        data.doc_file = signature
-
         if (signature === undefined) {
             return
+        }
+
+        data.signature = signature
+
+        const form_data = new FormData();
+        for (const [i, photo] of Array.from(data.doc_file).entries()) {
+            form_data.append(`doc_file`, photo);
+        }
+
+        for (let key in data) {
+            if (key !== 'doc_file') {
+                form_data.append(key, data[key])
+            }
         }
 
         const Url = 'https://www.cecolocp.com/main/webservices/api/v2.php?username=admin&action=send_email_request&api_key=d4f21953eaa37fedb60e6ec4b9e582d3'
         const dataFetch = await fetch(Url, {
             method: 'POST',
-            body: JSON.stringify(data)
+            body: form_data
         })
         const dataJson = await dataFetch.json()
 
@@ -51,8 +60,6 @@ const Register = () => {
             progress: undefined,
             theme: "dark",
         });
-
-        console.log('Response', await dataFetch.json())
     };
 
     return (
@@ -69,38 +76,41 @@ const Register = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className={styles.labelForm}>Nombres completos</label>
                     <input className={styles.inputForm} {...register("name", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s\.]*$/g })} />
-                    {errors.first_name && <span className={styles.errorForm}>No válido ^</span>}
+                    {errors.name && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Apellidos completos</label>
                     <input className={styles.inputForm} {...register("lastname", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s\.]*$/g })} />
-                    {errors.last_name && <span className={styles.errorForm}>No válido ^</span>}
+                    {errors.lastname && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Tipo de documento</label>
                     <select {...register("doc_type")}>
                         <option value="1">Cédula de ciudadania</option>
                         <option value="2">Nit</option>
                         <option value="3">Otro</option>
                     </select>
-                    {errors.tipo_documento && <span className={styles.errorForm}>No válido ^</span>}
+                    {errors.doc_type && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Numero de documento</label>
                     <input className={styles.inputForm} {...register("doc_number", { required: true, pattern: /^[0-9]*$/i })} />
-                    {errors.id_documento && <span className={styles.errorForm}>No válido ^</span>}
+                    {errors.doc_number && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Lugar de expedicion</label>
-                    <input className={styles.inputForm} type="date" {...register("doc_exp_place", { required: true })} />
-                    {errors.fecha_nacimiento && <span className={styles.errorForm}>No válido ^</span>}
+                    <input className={styles.inputForm} {...register("doc_exp_place", { required: true })} />
+                    {errors.doc_exp_place && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Numero de télefono</label>
                     <input className={styles.inputForm} {...register("phone", { required: true, pattern: /^[0-9]*$/i })} />
-                    {errors.telefono && <span className={styles.errorForm}>No válido ^</span>}
+                    {errors.phone && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Correo eléctronico</label>
                     <input className={styles.inputForm} {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
                     {errors.email && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Curso</label>
                     <select {...register("course")}>
-                        <option value="1">Aviación</option>
+                        <option value="2">Aviación</option>
                         <option value="2">Sguridad nacional</option>
-                        <option value="3">FBI</option>
+                        <option value="2">FBI</option>
                     </select>
-                    {errors.tipo_documento && <span className={styles.errorForm}>No válido ^</span>}
+                    {errors.course && <span className={styles.errorForm}>No válido ^</span>}
+                    <label className={styles.labelForm}>Documentos</label>
+                    <input className={styles.inputForm} name="doc_file[]" type="file" multiple {...register("doc_file", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
+                    {errors.doc_file && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Firma del documento</label>
-                    <section className={styles.firma} {...register("doc_file")}>
+                    <section className={styles.firma} {...register("signature")}>
                         <SignatureCanvas penColor='blue'
                             canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }}
                             onEnd={function (res) {

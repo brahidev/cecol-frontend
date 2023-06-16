@@ -386,21 +386,21 @@ input[type=number] {
 
     .title_slide{
         position: absolute;
-        top: 55%;
+        top: 50%;
         left: 1rem;
         font-family: "Rubik-Bold";
         color: var(--white);
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         z-index: 1;
     }
     
     .description_slide{
         position: absolute;
-        top: 75%;
+        top: 70%;
         left: 1rem;
         font-family: "Rubik-Regular";
         color: var(--white);
-        font-size: 1rem;
+        font-size: 1.rem;
         z-index: 1;
     }
 
@@ -416,6 +416,11 @@ input[type=number] {
     .wrapper_description_certificacion{
         margin-top: 0;
         padding-left: 0;
+    }
+
+    .formcertified_form{
+        width: 96%;
+        margin-inline: auto;
     }
 
     .formcertified{

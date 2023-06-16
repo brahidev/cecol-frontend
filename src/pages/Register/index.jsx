@@ -83,8 +83,7 @@ const Register = () => {
                     <label className={styles.labelForm}>Tipo de documento</label>
                     <select {...register("doc_type")}>
                         <option value="1">Cédula de ciudadania</option>
-                        <option value="2">Nit</option>
-                        <option value="3">Otro</option>
+                        <option value="2">Otro</option>
                     </select>
                     {errors.doc_type && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Numero de documento</label>
@@ -101,9 +100,11 @@ const Register = () => {
                     {errors.email && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Curso</label>
                     <select {...register("course")}>
-                        <option value="2">Aviación</option>
-                        <option value="2">Sguridad nacional</option>
-                        <option value="2">FBI</option>
+                        <option value="2">Vigilante</option>
+                        <option value="3">Supervisor</option>
+                        <option value="4">Escolta</option>
+                        <option value="5">Operador de medios</option>
+                        <option value="6">Atención y servicio al cliente</option>
                     </select>
                     {errors.course && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Documentos</label>

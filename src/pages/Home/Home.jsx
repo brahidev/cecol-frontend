@@ -11,6 +11,13 @@ register();
 const Home = ()=>{
     const swiperElRef = useRef(null);
 
+    const validateCertified = (event)=>{
+        event.preventDefault()
+        let documentType = event.target[0]
+        let document = event.target[1]
+        console.log('DATA CONSULT', documentType, document);
+    }
+
     useEffect(() => {
         // listen for Swiper events using addEventListener
         swiperElRef.current.addEventListener('progress', (e) => {
@@ -33,7 +40,7 @@ const Home = ()=>{
                     >
                     {
                         configSlideHome.map((slide)=>(
-                            <swiper-slide>
+                            <swiper-slide key={slide.title}>
                                 <div className={styles.wrapper_contain_slide}>
                                     <img className={styles.img_main_slide} src={isMobile ? slide.imgMobile : slide.img} alt={slide.title_img} />
                                     <span className={styles.title_slide}>{slide.title}</span>
@@ -82,7 +89,7 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
                         pagination="true"
                         >
                         {fichasHome.map((ficha, index)=>(
-                            <swiper-slide>
+                            <swiper-slide key={ficha.title}>
                                 <div key={ficha.title} className={styles.ficha}>
                                     <img src={ficha.urlIcon} alt={ficha.title} className={styles.imgficha}></img>
                                     <span className={styles.titleficha}>{ficha.title}</span>
@@ -107,7 +114,7 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
                         <span className={styles.formcertified_desc_title}>Valida la información de la certificación</span>
                         <span className={styles.formcertified_desc_desc}>solicite fácilmente tus certificados vigentes.</span>
                     </div>
-                    <div className={styles.formcertified_form}>
+                    <form className={styles.formcertified_form} onSubmit={validateCertified}>
                         <span className={styles.formcertified_form_title}>Complete el siguiente formulario</span>
                         <span className={styles.formcertified_form_subtitle}>Para validar su certificado</span>
                         <span className={styles.formcertified_form_subsubtitle}>Ingrese su documento*</span>
@@ -119,8 +126,8 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
                             </select>
                             <input className={styles.formcertified_form_text} type="number" name="" id="" />
                         </div>
-                        <button className={styles.formcertified_form_button}>Validar</button>
-                    </div>
+                        <button className={styles.formcertified_form_button} type="submit">Validar</button>
+                    </form>
             </section>
             <section>
                 {

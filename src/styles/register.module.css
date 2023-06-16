@@ -2,22 +2,10 @@
     width: 96%;
     display: flex;
     margin-inline: auto;
-    background-image: url('../../public/images/sugerencias.png');
+    background-image: url('../../public/images/sugerencias-e-ideas 1.png');
     aspect-ratio: 1/1;
     background-size: cover;
     margin-block: 2rem;
-    max-width: 1300px;
-}
-
-.register::after{
-    content: 'hola';
-    background-image: url('../../public/images/rectangle2.png');
-    background-size: cover;
-    width: 96%;
-    aspect-ratio: 1/1;
-    position: absolute;
-    font-size: 0;
-    top: 7rem;
     max-width: 1300px;
 }
 
@@ -49,9 +37,9 @@
     z-index: 2;
     margin: auto;
     background-color: var(--white);
-    height: 80%;
     border-radius: 10px;
     padding: 2rem;
+    height: auto;
 }
 
 .title{

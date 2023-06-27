@@ -28,7 +28,7 @@ const Register = () => {
             }
         }
 
-        const Url = 'https://www.cecolocp.com/main/webservices/api/v2.php?username=admin&action=send_email_request&api_key=d4f21953eaa37fedb60e6ec4b9e582d3'
+        const Url = process.env.REACT_APP_DOMAIN_ENDPOINTS + process.env.REACT_APP_REGISTER_ENDPOINT  ?? ''
         const dataFetch = await fetch(Url, {
             method: 'POST',
             body: form_data

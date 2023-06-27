@@ -40,7 +40,7 @@ const Certified = ()=>{
             </section>
             <section className={styles.main_description}>
                 <span className={styles.title}>Esquemas de Certificacion</span>
-                <span className={styles.description}>Si deseas recibir mas información, comunícate con nosotros a nuestra linea telefónica (000) 0000000, celular 0000000000, o escríbenos a los correos info@correo.com, coordinador@correo.com.</span>
+                {/* <span className={styles.description}>Si deseas recibir mas información, comunícate con nosotros a nuestra linea telefónica (000) 0000000, celular 0000000000, o escríbenos a los correos info@correo.com, coordinador@correo.com.</span> */}
             </section>
             <section className={styles.certificaciones}>
                 {esquemasCertificacion.map((itemCertified, index)=>(

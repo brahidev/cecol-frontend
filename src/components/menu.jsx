@@ -22,8 +22,8 @@ const MenuDesktop = ()=>{
                     </li>
                 </div>
                 <div className={styles.wrapper_login}>
-                    <Link to="/registro">REGISTRO</Link>
-                    <a href="/">INGRESAR</a>
+                    <Link to={process.env.REACT_APP_BTN_REGISTER}>REGISTRO</Link>
+                    <a href={process.env.REACT_APP_BTN_LOGIN}>INGRESAR</a>
                 </div>
             </menu>
         </section>

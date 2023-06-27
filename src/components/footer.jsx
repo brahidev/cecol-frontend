@@ -18,14 +18,14 @@ const Footer = () =>{
                 <div className={styles.col}>
                     <span className={styles.title}>Siguenos</span>
                     <div className={styles.social}>
-                        <img src={'/images/facebook.png'} alt="facebook"/>
-                        <img src={'/images/twitter.png'} alt="twitter"/>
-                        <img src={'/images/instagram.png'} alt="instagram"/>
-                        <img src={'/images/linkedIn.png'} alt="linkedIn"/>
+                        <a href={process.env.REACT_APP_FACEBOOK} target="_blank" rel="noreferrer"><img src={'/images/facebook.png'} alt="facebook"/></a>
+                        <a href={process.env.REACT_APP_TWITTER} target="_blank" rel="noreferrer"><img src={'/images/twitter.png'} alt="twitter"/></a>
+                        <a href={process.env.REACT_APP_INSTA} target="_blank" rel="noreferrer"><img src={'/images/instagram.png'} alt="instagram"/></a>
+                        <a href={process.env.REACT_APP_LINKEDIN} target="_blank" rel="noreferrer"><img src={'/images/linkedIn.png'} alt="linkedIn"/></a>
                     </div>
                     <div className={styles.login}>
-                        <a href="/registro">REGISTRO</a>
-                        <a href="/">INGRESAR</a>
+                        <a href={process.env.REACT_APP_BTN_REGISTER}>REGISTRO</a>
+                        <a href={process.env.REACT_APP_BTN_LOGIN}>INGRESAR</a>
                     </div>
                 </div>
             </section>

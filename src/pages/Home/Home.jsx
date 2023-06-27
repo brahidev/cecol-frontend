@@ -14,6 +14,9 @@ const Home = ()=>{
     const [ isLoadForm, setIsLoadForm] = useState(false)
     const swiperElRef = useRef(null);
 
+    console.log('PARAMS:', process.env.REACT_APP_SEARCH_CERTIFIED_ENDPOINT);
+    console.log('PARAMS:', process.env.REACT_APP_REGISTER_ENDPOINT);
+
     const validateCertified = (event)=>{
         event.preventDefault()
         let documentType = event.target[0].value
@@ -57,7 +60,7 @@ const Home = ()=>{
           redirect: 'follow'
         };
         
-        fetch("https://www.cecolocp.com/main/webservices/api/v2.php?username=admin&api_key=d4f21953eaa37fedb60e6ec4b9e582d3&action=get_candidate_validate", requestOptions)
+        fetch( process.env.REACT_APP_DOMAIN_ENDPOINTS + process.env.REACT_APP_SEARCH_CERTIFIED_ENDPOINT  ?? '', requestOptions)
         .then(response => response.text())
         .then(result => {
             let response = JSON.parse(result)
@@ -126,9 +129,7 @@ const Home = ()=>{
                         <span className={styles.titlefichas}>Quienes somos</span>
                         <span className={styles.subtitlefichas}>CECOL ocp</span>
                     </div>
-                    <p className={styles.description_esquemas}>{`CERTIFICACIÓN DE COMPETENCIA LABORALES S.A.S, NIT 901.693.108-8, Sigla: CE.COMP SAS Se constituyó por documento privado del 06 de marzo de 2023 bajo el número 02944310 del libro IX, matricula 03651875 del 13 de marzo de 2023 ante Cámara de Bogotá D.C.
-                        
-La sociedad cuenta con un establecimiento de comercio dedicado única y exclusivamente a realizar las actividades de evaluación de la conformidad de acuerdo con los alcances acreditados, denominado CECOL OCP, matrícula 109428 del 10 de junio de 2022 ante Cámara de Comercio de Bogotá D.C.`}
+                    <p className={styles.description_esquemas}>{`Es un Organismo de evaluación de la conformidad creado con la firme intención de contribuir desde la aplicación de esquemas de certificación justos, equitativos y confiables con la competitividad empresarial, mediante la evaluación y certificación de competencias laborales de las personas que demuestren los conocimientos y el desempeño adecuado para cumplir con los criterios establecidos en las normas sectoriales de referencia para cada alcance.`}
                     </p>
                     <Link to={'/quienes-somos'} className={styles.link_quienes_somos}>Ver más +</Link>
                 </div>
@@ -140,7 +141,7 @@ La sociedad cuenta con un establecimiento de comercio dedicado única y exclusiv
                         <span className={styles.subtitlefichas}>Certificación</span>
                     </div>
                     <p className={styles.descfichas}>
-                        En CECOL OCP damos respuesta al nuevo escenario profesional marcado por la necesidad de profesionalización de oficios en los diferentes ámbitos y entornos empresariales, cada vez más internacionalizado y con necesidades puntuales sobre desarrollo humano. La certificación está concebida como un aval para las empresas, que informa con rigor y precisión sobre la especialización y la experiencia de cada profesional y guiará la contratación del perfil más adecuado.
+                    En CECOL OCP damos respuesta a los nuevos contextos empresariales a traves del reconocimiento de saberes previos en diferentes ambitos del mercado laboral, atendiendo las necesidades de los diferentes grupos de interes. Desarrollamos, revisamos y validamos cada esquema de certificación con el fin de aplicar instrumentos de evaluación confiables, que informan con rigor y precision sobre la experticia para desarrollar una labor específica de cada persona que accede a un certificado contribuyendo así, con los procesos de contratación de las empresas.
                     </p>
                 </div>
             </section>

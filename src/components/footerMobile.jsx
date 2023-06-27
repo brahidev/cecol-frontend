@@ -23,8 +23,8 @@ const Footer = () =>{
                         <img src={'/images/linkedIn.png'} alt="linkedIn"/>
                     </div>
                     <div className={styles.login}>
-                        <a href="/registro">REGISTRO</a>
-                        <a href="/">INGRESAR</a>
+                        <a href={process.env.REACT_APP_BTN_REGISTER}>REGISTRO</a>
+                        <a href={process.env.REACT_APP_BTN_LOGIN}>INGRESAR</a>
                     </div>
                 </div>
             </section>

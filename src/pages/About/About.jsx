@@ -65,9 +65,11 @@ const About = () => {
                 <section className={aboutStyles.presentation}>
                     <label className={aboutStyles.subTitle}>Presentación de la empresa</label>
                     <div>
-                        <p>CERTIFICACIÓN DE COMPETENCIA LABORALES S.A.S, NIT 901.693.108-8, Sigla: CE.COMP SAS Se constituyó por documento privado del 06 de marzo de 2023 bajo el número 02944310 del libro IX, matricula 03651875 del 13 de marzo de 2023 ante Cámara de Bogotá D.C.</p>
-                        <p>La sociedad cuenta con un establecimiento de comercio dedicado única y exclusivamente a realizar las actividades de evaluación de la conformidad de acuerdo con los alcances acreditados, denominado CECOL OCP, matrícula 109428 del 10 de junio de 2022 ante Cámara de Comercio de Bogotá D.C.</p>
-                        <p>Se designó un Representante legal de libre nombramiento y remoción por parte de la Asamblea general de accionistas, así como un Director General quien tendrá la responsabilidad de asegurar la continuidad del negocio mediante el cumplimiento de los requisitos de orden normativo y operativo. Además, se designará un Líder para el sistema de gestión que será asumido por el Coordinador de calidad.</p>
+                        <p>CERTIFICACIÓN DE COMPETENCIA LABORALES S.A.S, NIT 901.693.108-8, Sigla: CE.COMP SAS Se constituyó por documento privado del 06 de marzo de 2023 bajo el número 02944310 del libro IX, matricula 03651875 del 13 de marzo de 2023 ante Cámara de Bogotá D.C.
+
+La sociedad cuenta con un establecimiento de comercio dedicado única y exclusivamente a realizar las actividades de evaluación de la conformidad de acuerdo con los alcances acreditados, denominado CECOL OCP, matrícula 03661013 del 30 de marzo de 2023 ante Cámara de Comercio de Bogotá D.C.
+
+Se designó un Representante legal de libre nombramiento y remoción por parte de la Asamblea general de accionistas, así como un Gerente general quien tendrá la responsabilidad de asegurar la continuidad del negocio mediante el cumplimiento de los requisitos de orden normativo y operativo. Además, se designará un Líder para el sistema de gestión que será asumido por el Coordinador de calidad.</p>
                     </div>
                 </section>
                 {/* Mision */}
@@ -118,7 +120,6 @@ const About = () => {
                 <section className={aboutStyles.politicas}>
                     <div className={aboutStyles.ourPoliticas}>
                         <label className={aboutStyles.subTitle}>Nuestras politicas</label>
-                        <p>Nuestro organismo tiene como compromiso, cumplir los ordenamientos legales y gestionar la mejora continua tanto en los servicios ofrecidos como en los procesos del SGC. La alta dirección ha establecido una POLÍTICA DE CALIDAD, teniendo como premisa la permanente optimización de los procesos que permita lograr una prestación eficiente de nuestros servicios. Esta política forma parte de la cultura organizacional, y para que esto sea posible debe ser conocida, entendida, implementada y mantenida en todos los niveles, a fin de transmitir y sensibilizar a los dueños de proceso sobre la importancia de realizar las actividades cumpliendo en todo momento con nuestros principios y valores corporativos.</p>
                     </div>
                     <div className={aboutStyles.ourPoliticas}>
                         <label className={aboutStyles.subTitle}>Politicas</label>
@@ -145,7 +146,7 @@ const About = () => {
                     <p>El organismo no subcontrata la decisión de la certificación, puesto que asume en forma explícita la responsabilidad en este sentido, asignándole esta tarea a él (la) profesional certificador(a) debiendo demostrar bajo evidencias objetivas que se cumplieron los requisitos de conformidad del esquema de certificación.</p>
                 </section>
                 {/* Descripcion */}
-                <section className={aboutStyles.description}>
+                {/* <section className={aboutStyles.description}>
                     <label className={aboutStyles.subTitle}>Descripción del proceso</label>
                     <p>Evaluación y certificación de competencias laborales mediante el cumplimiento de tres etapas fundamentales:</p>
                     <ul>
@@ -153,7 +154,7 @@ const About = () => {
                         <li>Determinación - Las actividades de determinación se llevan a cabo con el fin de obtener información completa relativa al cumplimiento de los requisitos especificados por el objeto de evaluación de la conformidad o su muestra.</li>
                         <li>Revisión y atestación - Constituye la etapa final de verificación antes de tomar la importante decisión sobre si se ha demostrado o no en forma confiable que el objeto de evaluación de la conformidad cumple con los requisitos especificados. Si cumple, la atestación (5.2) da lugar a una “afirmación” en la forma que mejor llegue a todos los usuarios potenciales. “Afirmación de conformidad” es un término genérico que se utiliza para abarcar a todos los medios por los que se comunica que se ha demostrado que se cumplen los requisitos especificados.</li>
                     </ul>
-                </section>
+                </section> */}
                 {/* Derechos */}
                 <section className={aboutStyles.derechos}>
                     <div className={aboutStyles.derechosContainer}>

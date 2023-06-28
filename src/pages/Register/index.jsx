@@ -14,12 +14,12 @@ const Register = () => {
         if (signature === undefined) {
             return
         }
-
+        console.log('Data', data)
         data.signature = signature
 
         const form_data = new FormData();
         for (const [i, photo] of Array.from(data.doc_file).entries()) {
-            form_data.append(`doc_file`, photo);
+            form_data.append(`doc_file[]`, photo);
         }
 
         for (let key in data) {
@@ -108,7 +108,7 @@ const Register = () => {
                     </select>
                     {errors.course && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Documentos</label>
-                    <input className={styles.inputForm} name="doc_file[]" type="file" multiple {...register("doc_file", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
+                    <input className={styles.inputForm} name="doc_file[]" type="file" multiple {...register("doc_file[]", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
                     {errors.doc_file && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Firma del documento</label>
                     <section className={styles.firma} {...register("signature")}>

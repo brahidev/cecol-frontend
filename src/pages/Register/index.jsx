@@ -76,10 +76,10 @@ const Register = () => {
                 <span className={styles.title}>Registro de matricula</span>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label className={styles.labelForm}>Nombres completos</label>
-                    <input className={styles.inputForm} {...register("name", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s\.]*$/g })} />
+                    <input className={styles.inputForm} {...register("name", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s]*$/g })} />
                     {errors.name && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Apellidos completos</label>
-                    <input className={styles.inputForm} {...register("lastname", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s\.]*$/g })} />
+                    <input className={styles.inputForm} {...register("lastname", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s]*$/g })} />
                     {errors.lastname && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Tipo de documento</label>
                     <select {...register("doc_type")}>
@@ -97,7 +97,7 @@ const Register = () => {
                     <input className={styles.inputForm} {...register("phone", { required: true, pattern: /^[0-9]*$/i })} />
                     {errors.phone && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Correo eléctronico</label>
-                    <input className={styles.inputForm} {...register("email", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
+                    <input className={styles.inputForm} {...register("email", { required: true, pattern: /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
                     {errors.email && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Curso</label>
                     <select {...register("course")}>
@@ -109,7 +109,7 @@ const Register = () => {
                     </select>
                     {errors.course && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Documentos</label>
-                    <input className={styles.inputForm} name="doc_file[]" type="file" multiple {...register("doc_file[]", { required: true, pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
+                    <input className={styles.inputForm} name="doc_file[]" type="file" multiple {...register("doc_file[]", { required: true, pattern: /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
                     {errors.doc_file && <span className={styles.errorForm}>No válido ^</span>}
                     <label className={styles.labelForm}>Firma del documento</label>
                     <section className={styles.firma} {...register("signature")}>

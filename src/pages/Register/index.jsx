@@ -19,6 +19,7 @@ const Register = () => {
 
         const form_data = new FormData();
         for (const [i, photo] of Array.from(data.doc_file).entries()) {
+            console.log(i)
             form_data.append(`doc_file[]`, photo);
         }
 
@@ -28,7 +29,7 @@ const Register = () => {
             }
         }
 
-        const Url = process.env.REACT_APP_DOMAIN_ENDPOINTS + process.env.REACT_APP_REGISTER_ENDPOINT  ?? ''
+        const Url = process.env.REACT_APP_DOMAIN_ENDPOINTS + process.env.REACT_APP_REGISTER_ENDPOINT ?? ''
         const dataFetch = await fetch(Url, {
             method: 'POST',
             body: form_data

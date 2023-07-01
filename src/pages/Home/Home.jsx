@@ -209,6 +209,7 @@ const Home = ()=>{
                             <div><span className={styles.label}>Otorgado: </span><span className={styles.value}>{dataUser.fecha_otorgamiento}</span></div>
                             <div><span className={styles.label}>Fecha de vencimiento: </span><span className={styles.value}>{dataUser.fecha_vencimiento}</span></div>
                             <div><span className={styles.label}>Fecha de renovación: </span><span className={styles.value}>{dataUser.fecha_renovacion}</span></div>
+                            <button className={styles.formcertified_form_button} onClick={()=>setDataUser(null)}>Retornar</button>
                         </div>
                     }
             </section>

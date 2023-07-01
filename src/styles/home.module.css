@@ -268,7 +268,7 @@
 .formcertified_form .label{
     font-family: "Rubik-Regular";
     color: var(--blue);
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: 1%;
     display: inline-flex;
     margin-left: 1rem;
@@ -277,7 +277,7 @@
 .formcertified_form .value{
     font-family: "Rubik-Bold";
     color: var(--blue);
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: 1%;
     display: inline-flex;
     text-align: center;

@@ -71,6 +71,7 @@ const Home = ()=>{
                     progress: undefined,
                     theme: "dark",
                 });
+                setIsLoadForm(false)
             }else if(response.data.length > 0){
                 setDataUser(response.data[0])
                 setIsLoadForm(false)

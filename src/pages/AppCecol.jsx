@@ -5,12 +5,14 @@ import Header from "../components/header";
 import HeaderMB from "../components/headerMobile"
 import Footer from "../components/footer";
 import FooterMB from "../components/footerMobile";
+import WhatsAppButton from "../components/btnWhatsapp"
 import { isMobile } from "react-device-detect";
 
 export default function AppCecol() {
   return (
     <div>
       <Router>
+        <WhatsAppButton/>
         {isMobile?
           <>
             <HeaderMB/>

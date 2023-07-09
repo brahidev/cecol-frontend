@@ -288,7 +288,7 @@ export const deberesContent = [
     },
     {
         image: '/images/persona_deberes.png',
-        title: 'deberes de los solicitantes',
+        title: 'Deberes de los solicitantes',
         content: `• Las personas certificadas deberán cumplir con las disposiciones establecidas para el uso del certificado entregado los cuales estarán disponibles para su consulta en los registros y documentos publicados.
 
         • En caso de aceptar el certificado, la persona certificada declara de forma tácita que está conforme respecto a los resultados, decisiones y demás aspectos referentes a la aplicación del proceso de certificación.

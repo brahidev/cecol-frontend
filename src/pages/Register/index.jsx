@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { Link } from "react-router-dom";
 import styles from "../../styles/register.module.css"
 import { useForm } from "react-hook-form";
@@ -8,9 +8,17 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const sigRef = useRef();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [signature, setSignature] = useState()
-    const onSubmit = async data => {
+    const handleSignatureEnd = () => {
+        setSignature(sigRef.current.toDataURL());
+    }
+    const clearSignature = () => {
+        sigRef.current.clear();
+        setSignature();
+    }
+    const onSubmit = async (data) => {
         if (signature === undefined) {
             return
         }
@@ -61,6 +69,7 @@ const Register = () => {
             progress: undefined,
             theme: "dark",
         });
+        reset()
     };
 
     return (
@@ -115,16 +124,18 @@ const Register = () => {
                     <section className={styles.firma} {...register("signature")}>
                         <SignatureCanvas penColor='blue'
                             canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }}
+                            ref={sigRef}
                             onEnd={function (res) {
+                                handleSignatureEnd()
                                 const { target } = res
                                 const data = target.toDataURL().replace(/^data:image\/png;base64,/, "")
-
                                 setSignature(data)
                             }}
                         />
                         {signature === undefined && <span className={styles.errorForm}>Complete la firma</span>}
                     </section>
                     {errors.documentfile && <span className={styles.errorForm}>Cargue un documento</span>}
+                    <input className={styles.btnClearSignature} onClick={clearSignature} value="Borrar firma" />
                     <Link className={styles.tyc} to="/quienes-somos">Política de tratamiento de datos personales</Link>
                     <input className={styles.btnsubmit} type="submit" value="Registrarse" />
                 </form>

@@ -13,10 +13,6 @@ const Home = ()=>{
     const [ dataUser, setDataUser ] = useState(null)
     const [ isLoadForm, setIsLoadForm] = useState(false)
     const swiperElRef = useRef(null);
-
-    console.log('PARAMS:', process.env.REACT_APP_SEARCH_CERTIFIED_ENDPOINT);
-    console.log('PARAMS:', process.env.REACT_APP_REGISTER_ENDPOINT);
-
     const validateCertified = (event)=>{
         event.preventDefault()
         let documentType = event.target[0].value
@@ -222,8 +218,8 @@ const Home = ()=>{
                         pagination="true"
                         >
                         {
-                            configSlideHomeBotton.map((slide)=>(
-                                <swiper-slide>
+                            configSlideHomeBotton.map((slide, index)=>(
+                                <swiper-slide key={index}>
                                     <div className={styles.wrapper_contain_slide_bottom}>
                                         <div className={styles.containinfo}>
                                             <span className={styles.description_slide_bottom}>{slide.description}</span>

@@ -133,5 +133,6 @@
     canvas{
         width: auto;
         margin-inline: auto;
+        max-width: 96vw;
     }
 }

@@ -11,6 +11,7 @@ const Register = () => {
     const sigRef = useRef();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const [signature, setSignature] = useState()
+    const [isLoading, setLoad] = useState(false)
     const handleSignatureEnd = () => {
         setSignature(sigRef.current.toDataURL());
     }
@@ -22,7 +23,9 @@ const Register = () => {
         if (signature === undefined) {
             return
         }
-        console.log('Data', data)
+
+        setLoad(true)
+
         data.signature = signature
 
         const form_data = new FormData();
@@ -55,7 +58,7 @@ const Register = () => {
                 progress: undefined,
                 theme: "dark",
             });
-
+            setLoad(true)
             return
         }
 
@@ -69,6 +72,7 @@ const Register = () => {
             progress: undefined,
             theme: "dark",
         });
+        setLoad(true)
         reset()
     };
 
@@ -83,62 +87,66 @@ const Register = () => {
             </section>
             <section className={styles.formsection}>
                 <span className={styles.title}>Registro de matricula</span>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <label className={styles.labelForm}>Nombres completos</label>
-                    <input className={styles.inputForm} {...register("name", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s]*$/g })} />
-                    {errors.name && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Apellidos completos</label>
-                    <input className={styles.inputForm} {...register("lastname", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s]*$/g })} />
-                    {errors.lastname && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Tipo de documento</label>
-                    <select {...register("doc_type")}>
-                        <option value="1">Cédula de ciudadania</option>
-                        <option value="2">Otro</option>
-                    </select>
-                    {errors.doc_type && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Numero de documento</label>
-                    <input className={styles.inputForm} {...register("doc_number", { required: true, pattern: /^[0-9]*$/i })} />
-                    {errors.doc_number && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Lugar de expedicion</label>
-                    <input className={styles.inputForm} {...register("doc_exp_place", { required: true })} />
-                    {errors.doc_exp_place && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Numero de télefono</label>
-                    <input className={styles.inputForm} {...register("phone", { required: true, pattern: /^[0-9]*$/i })} />
-                    {errors.phone && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Correo eléctronico</label>
-                    <input className={styles.inputForm} {...register("email", { required: true, pattern: /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
-                    {errors.email && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Curso</label>
-                    <select {...register("course")}>
-                        <option value="2">Vigilante</option>
-                        <option value="3">Supervisor</option>
-                        <option value="4">Escolta</option>
-                        <option value="5">Operador de medios</option>
-                        <option value="6">Atención y servicio al cliente</option>
-                    </select>
-                    {errors.course && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Documentos</label>
-                    <input className={styles.inputForm} name="doc_file[]" type="file" multiple {...register("doc_file[]", { required: true, pattern: /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
-                    {errors.doc_file && <span className={styles.errorForm}>No válido ^</span>}
-                    <label className={styles.labelForm}>Firma del documento</label>
-                    <section className={styles.firma} {...register("signature")}>
-                        <SignatureCanvas penColor='blue'
-                            canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }}
-                            ref={sigRef}
-                            onEnd={function (res) {
-                                handleSignatureEnd()
-                                const { target } = res
-                                const data = target.toDataURL().replace(/^data:image\/png;base64,/, "")
-                                setSignature(data)
-                            }}
-                        />
-                        {signature === undefined && <span className={styles.errorForm}>Complete la firma</span>}
-                    </section>
-                    {errors.documentfile && <span className={styles.errorForm}>Cargue un documento</span>}
-                    <input className={styles.btnClearSignature} onClick={clearSignature} value="Borrar firma" />
-                    <Link className={styles.tyc} to="/quienes-somos">Política de tratamiento de datos personales</Link>
-                    <input className={styles.btnsubmit} type="submit" value="Registrarse" />
-                </form>
+                {isLoading ? 
+                    <div className={styles.lds_facebook}><div></div><div></div><div></div></div>
+                    :
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <label className={styles.labelForm}>Nombres completos</label>
+                        <input className={styles.inputForm} {...register("name", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s]*$/g })} />
+                        {errors.name && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Apellidos completos</label>
+                        <input className={styles.inputForm} {...register("lastname", { required: true, pattern: /^[a-zA-Z]{2,100}.*[\s]*$/g })} />
+                        {errors.lastname && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Tipo de documento</label>
+                        <select {...register("doc_type")}>
+                            <option value="1">Cédula de ciudadania</option>
+                            <option value="2">Otro</option>
+                        </select>
+                        {errors.doc_type && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Numero de documento</label>
+                        <input className={styles.inputForm} {...register("doc_number", { required: true, pattern: /^[0-9]*$/i })} />
+                        {errors.doc_number && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Lugar de expedicion</label>
+                        <input className={styles.inputForm} {...register("doc_exp_place", { required: true })} />
+                        {errors.doc_exp_place && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Numero de télefono</label>
+                        <input className={styles.inputForm} {...register("phone", { required: true, pattern: /^[0-9]*$/i })} />
+                        {errors.phone && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Correo eléctronico</label>
+                        <input className={styles.inputForm} {...register("email", { required: true, pattern: /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
+                        {errors.email && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Curso</label>
+                        <select {...register("course")}>
+                            <option value="2">Vigilante</option>
+                            <option value="3">Supervisor</option>
+                            <option value="4">Escolta</option>
+                            <option value="5">Operador de medios</option>
+                            <option value="6">Atención y servicio al cliente</option>
+                        </select>
+                        {errors.course && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Documentos</label>
+                        <input className={styles.inputForm} name="doc_file[]" type="file" multiple {...register("doc_file[]", { required: true, pattern: /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/i })} />
+                        {errors.doc_file && <span className={styles.errorForm}>No válido ^</span>}
+                        <label className={styles.labelForm}>Firma del documento</label>
+                        <section className={styles.firma} {...register("signature")}>
+                            <SignatureCanvas penColor='blue'
+                                canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }}
+                                ref={sigRef}
+                                onEnd={function (res) {
+                                    handleSignatureEnd()
+                                    const { target } = res
+                                    const data = target.toDataURL().replace(/^data:image\/png;base64,/, "")
+                                    setSignature(data)
+                                }}
+                            />
+                            {signature === undefined && <span className={styles.errorForm}>Complete la firma</span>}
+                        </section>
+                        {errors.documentfile && <span className={styles.errorForm}>Cargue un documento</span>}
+                        <input className={styles.btnClearSignature} onClick={clearSignature} value="Borrar firma" />
+                        <Link className={styles.tyc} to="/quienes-somos">Política de tratamiento de datos personales</Link>
+                        <input className={styles.btnsubmit} type="submit" value="Registrarse" />
+                    </form>
+                }
             </section>
             <ToastContainer
                 position="bottom-right"

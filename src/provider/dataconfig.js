@@ -78,25 +78,11 @@ export const fichasHome = [
 
 export const configSlideHomeBotton = [
     {
-        img: '/images/ernesto.png',
+        img: '/images/JuanFelipe.jpg',
         title_img: 'cecol',
-        description: 'Son un equipo de profesionales con la mejor economía para garantizar que un buen proceso de certificación. ',
-        name: 'Ernesto Escobar',    
-        profession: 'Empleado',
-    },
-    {
-        img: '/images/ernesto.png',
-        title_img: 'cecol',
-        description: 'Son un equipo de profesionales con la mejor economía para garantizar que un buen proceso de certificación. ',
-        name: 'Ernesto Escobar',    
-        profession: 'Empleado',
-    },
-    {
-        img: '/images/ernesto.png',
-        title_img: 'cecol',
-        description: 'Son un equipo de profesionales con la mejor economía para garantizar que un buen proceso de certificación. ',
-        name: 'Ernesto Escobar',    
-        profession: 'Empleado',
+        description: 'El equipo de profesionales se destaca por ofrecer un proceso inigualable de certificación. ',
+        name: 'Juan Lozano',    
+        profession: 'Director Nacional de operaciones',
     },
     {
         img: '/images/ernesto.png',

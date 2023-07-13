@@ -417,6 +417,12 @@ input[type=number] {
     gap: 8rem;
 }
 
+.wrapper_contain_slide_bottom img{
+    width: 261px;
+    height: 267px;
+    border-radius: 25px;
+}
+
 .containinfo{
     max-width: 35rem;
     display: flex;

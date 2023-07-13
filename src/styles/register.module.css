@@ -1,4 +1,4 @@
-.register{
+.register {
     width: 96%;
     display: flex;
     margin-inline: auto;
@@ -9,7 +9,7 @@
     max-width: 1300px;
 }
 
-.infsection{
+.infsection {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -17,14 +17,14 @@
     z-index: 2;
 }
 
-.logo{
+.logo {
     width: fit-content;
     position: relative;
     margin-inline: auto;
     height: auto;
 }
 
-.description{
+.description {
     width: 80%;
     color: var(--white);
     text-align: center;
@@ -32,7 +32,7 @@
     margin-block: 2rem;
 }
 
-.formsection{
+.formsection {
     width: 35%;
     z-index: 2;
     margin: auto;
@@ -42,7 +42,7 @@
     height: auto;
 }
 
-.title{
+.title {
     display: block;
     font-size: 1.8rem;
     font-family: "Rubik-Bold";
@@ -50,7 +50,7 @@
     margin-bottom: 3rem
 }
 
-.labelForm{
+.labelForm {
     width: 45%;
     position: relative;
     display: inline-flex;
@@ -59,7 +59,8 @@
     margin-bottom: 1rem;
 }
 
-.inputForm, select{
+.inputForm,
+select {
     width: 52%;
     font-family: "Rubik-Regular";
     height: 48px;
@@ -70,7 +71,7 @@
     margin-bottom: 2rem;
 }
 
-.errorForm{
+.errorForm {
     width: 60%;
     color: var(--red);
     display: block;
@@ -79,7 +80,7 @@
     margin-left: auto;
 }
 
-.btnClearSignature{
+.btnClearSignature {
     width: 100px;
     padding: 0.5rem;
     border: none;
@@ -94,7 +95,7 @@
     cursor: pointer;
 }
 
-.btnsubmit{
+.btnsubmit {
     width: 40%;
     padding: 1rem;
     border: 2px solid var(--blue-light);
@@ -119,7 +120,7 @@
     margin-block: 3rem;
 }
 
-.btnsubmit:hover{
+.btnsubmit:hover {
     box-shadow: 3px 3px 5px #000;
     transition-duration: 0.3s
 }
@@ -129,23 +130,72 @@
     border-radius: 5px;
 }
 
+
+.lds_facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds_facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: var(--blue);
+    animation: lds_facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds_facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+
+.lds_facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+
+.lds_facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+
+@keyframes lds_facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+
+    50%,
+    100% {
+        top: 24px;
+        height: 32px;
+    }
+}
+
 @media (max-width: 1024px) {
-    .register{
+    .register {
         flex-direction: column;
         background-image: none;
     }
-    .register::after{
+
+    .register::after {
         background-image: none;
     }
-    .infsection{
+
+    .infsection {
         display: none;
     }
-    .formsection{
+
+    .formsection {
         width: 100%;
         height: auto;
         padding: 0;
     }
-    canvas{
+
+    canvas {
         width: auto;
         margin-inline: auto;
         max-width: 96vw;

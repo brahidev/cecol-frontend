@@ -1,5 +1,6 @@
 import React from "react";
 import styles from '../styles/footer.module.css'
+import { Link } from "react-router-dom";
 import { itemsFooter } from '../provider/dataconfig'
 
 const Footer = () =>{
@@ -24,8 +25,8 @@ const Footer = () =>{
                         <a href={process.env.REACT_APP_LINKEDIN} target="_blank" rel="noreferrer"><img src={'/images/linkedIn.png'} alt="linkedIn"/></a>
                     </div>
                     <div className={styles.login}>
-                        <a href={process.env.REACT_APP_BTN_REGISTER}>REGISTRO</a>
-                        <a href={process.env.REACT_APP_BTN_LOGIN}>INGRESAR</a>
+                        <Link to={process.env.REACT_APP_BTN_REGISTER}>REGISTRO</Link>
+                        <Link to={process.env.REACT_APP_BTN_LOGIN}>INGRESAR</Link>
                     </div>
                 </div>
             </section>

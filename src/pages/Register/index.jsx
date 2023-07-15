@@ -58,7 +58,7 @@ const Register = () => {
                 progress: undefined,
                 theme: "dark",
             });
-            setLoad(true)
+            setLoad(false)
             return
         }
 
@@ -72,7 +72,7 @@ const Register = () => {
             progress: undefined,
             theme: "dark",
         });
-        setLoad(true)
+        setLoad(false)
         reset()
     };
 
@@ -100,7 +100,10 @@ const Register = () => {
                         <label className={styles.labelForm}>Tipo de documento</label>
                         <select {...register("doc_type")}>
                             <option value="1">Cédula de ciudadania</option>
-                            <option value="2">Otro</option>
+                            <option value="2">Cédula de extranjería</option>
+                            <option value="3">Pasaporte</option>
+                            <option value="4">Tarjeta de identidad</option>
+                            <option value="5">Otro</option>
                         </select>
                         {errors.doc_type && <span className={styles.errorForm}>No válido ^</span>}
                         <label className={styles.labelForm}>Numero de documento</label>

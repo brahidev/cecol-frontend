@@ -191,8 +191,11 @@ const Home = ()=>{
                             <span className={styles.formcertified_form_subsubtitle}>Ingrese su documento*</span>
                             <div className={styles.formcertified_form_wrapper_input}>
                                 <select className={styles.formcertified_form_list}>
-                                    <option className={styles.formcertified_form_option} value="1">CC</option>
-                                    <option className={styles.formcertified_form_option} value="2">NIT</option>
+                                    <option className={styles.formcertified_form_option} value="1">Cédula de ciudadania</option>
+                                    <option className={styles.formcertified_form_option} value="2">Cédula de extranjería</option>
+                                    <option className={styles.formcertified_form_option} value="3">Pasaporte</option>
+                                    <option className={styles.formcertified_form_option} value="4">Tarjeta de identidad</option>
+                                    <option className={styles.formcertified_form_option} value="5">Otro</option>
                                 </select>
                                 <input className={styles.formcertified_form_text} type="number" name="" id="" />
                             </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from '../styles/footerMB.module.css'
 import { itemsFooter } from '../provider/dataconfig'
+import { Link } from "react-router-dom";
 
 const Footer = () =>{
     return(
@@ -10,7 +11,7 @@ const Footer = () =>{
                     <div key={item.title} className={styles.col}>
                         <span className={styles.title}>{item.title}</span>
                         {item.subitems.map((subitem)=>(
-                            <a key={subitem.name} href={subitem.url} className={styles.subitem}>{subitem.name}</a>
+                            <Link key={subitem.name} to={subitem.url} className={styles.subitem}>{subitem.name}</Link>
                         ))}
                     </div>
                 ))}
@@ -23,8 +24,8 @@ const Footer = () =>{
                         <img src={'/images/linkedIn.png'} alt="linkedIn"/>
                     </div>
                     <div className={styles.login}>
-                        <a href={process.env.REACT_APP_BTN_REGISTER}>REGISTRO</a>
-                        <a href={process.env.REACT_APP_BTN_LOGIN}>INGRESAR</a>
+                        <Link to={process.env.REACT_APP_BTN_REGISTER}>REGISTRO</Link>
+                        <Link to={process.env.REACT_APP_BTN_LOGIN}>INGRESAR</Link>
                     </div>
                 </div>
             </section>
